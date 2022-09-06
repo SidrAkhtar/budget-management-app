@@ -34,10 +34,12 @@ code {
 
 h1 {
   color: white;
+  font-size: 5vmin;
 }
 
 h3 {
   color: magenta;
+  font-size: 3vmin;
 }
 
 *, *:before, *:after {
@@ -65,8 +67,9 @@ code {
   height: 100%;
 }
 
-nav {
+.nav, a {
   color: white;
+  font-size: 3vmin;
 }
 
 .align-ctr {

@@ -9,14 +9,16 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav className="nav">
-      <Link to='/budget'>Budget</Link>
-      &nbsp; | &nbsp;
-      <Link to='/addbudget'>Add Budget</Link>
-      &nbsp; | &nbsp;
-      Welcome, {user.name}
-      &nbsp; | &nbsp;
-      <Link to='' onClick={handleLogOut}>Log Out</Link>
-    </nav>
+    <main className="nav">
+      <nav>
+        <Link to='/budget'>Budget</Link>
+        &nbsp; | &nbsp;
+        <Link to='/addbudget'>Add Budget</Link>
+        &nbsp; | &nbsp;
+        Welcome, {user.name}
+        &nbsp; | &nbsp;
+        <Link to='' onClick={handleLogOut}>Log Out</Link>
+      </nav>
+    </main>
   );
 }
