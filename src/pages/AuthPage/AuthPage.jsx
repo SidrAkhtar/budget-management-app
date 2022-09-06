@@ -7,6 +7,7 @@ export default function AuthPage({ setUser }) {
   
   return (
     <main>
+      <h3>Managing money, made simple and easy!</h3>
       <button onClick={() => setShowLogin(!showLogin)}>
         {showLogin ? 'Sign Up' : 'Log In'}
       </button>
