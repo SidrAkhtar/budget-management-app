@@ -6,11 +6,11 @@ export default function AddBudget() {
       <label>Maximum Spending</label>
         {/* <input type="number" min="1" step="any" /> */}
         <input 
-          type="text" 
-
+          type="text"
+          data-type="currency"
           placeholder="$0.00"
         />
-      <button>Add Budget</button>
+      <button type="submit">Add Budget</button>
     </form>
   );
 }
