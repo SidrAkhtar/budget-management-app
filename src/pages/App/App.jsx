@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
@@ -11,10 +11,19 @@ import NavBar from '../../components/NavBar/NavBar';
 import BudgetCard from '../../components/BudgetCard/BudgetCard';
 import TotalBudgetCard from '../../components/TotalBudgetCard/TotalBudgetCard';
 import UncategorizedBudgetCard from '../../components/UncategorizedBudgetCard/UncategorizedBudgetCard';
+import * as budgetAPI from '../../utilities/budget-api';
 import './App.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [budget, setBudget] = useState([]);
+  
+  useEffect(()=> {
+    async function getAllBudget() {
+      const allBudget = await budgetAPI.getAll()
+      console.log(allBudget)
+    }
+  })
 
   return (
     <main className="App">
@@ -26,7 +35,7 @@ export default function App() {
             {/* Route components in here */}
             <Route path="/" element={<MyBudgets />} />
             <Route path='/budget' element={<BudgetPage />} />
-            <Route path='/addbudget' element={<AddBudget />} />
+            <Route path='/budget/new' element={<AddBudget />} />
             {/* <Route path='/orders' element={<OrderHistoryPage />} /> */}
           </Routes>
         </>
