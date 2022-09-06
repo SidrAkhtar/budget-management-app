@@ -1,11 +1,11 @@
-body {
+/* body {
   margin: 10;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 html { 
   background: url(https://i.imgur.com/lMvYjvV.png) no-repeat center center fixed; 
@@ -33,13 +33,17 @@ code {
 }
 
 h1 {
-  color: white;
+  color: var(--text-light);
   font-size: 5vmin;
 }
 
 h3 {
   color: magenta;
   font-size: 3vmin;
+}
+
+p {
+  color: var(--text-light)
 }
 
 *, *:before, *:after {
