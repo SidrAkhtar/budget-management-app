@@ -6,9 +6,9 @@ export default function BudgetPage() {
    return(
       <>
          <Link to='/budget/new'>Add Budget</Link>
-         <button>Add Expense</button>
+         &nbsp; &nbsp; 
+         <Link to='/expense/new'>Add Expense</Link>
          <h1>Total     $1,240/$2,500</h1>
-         <BudgetCard></BudgetCard>
       </>
    );
  }

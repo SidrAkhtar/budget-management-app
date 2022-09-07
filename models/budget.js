@@ -25,18 +25,15 @@ const expenseSchema = new Schema({
 const budgetSchema = new Schema({
   name: { 
     type: String, 
-    required: true 
+    required: true,
   },
   maximum: {
     type: Number,
+    default: 0,
   },
   expenses: [expenseSchema]
 }, {
-  timestamps: true
+  timestamps: true,
 });
 
-
-
-
-
-module.exports = mongoose.model('Budget',budgetSchema, categorySchema);
+module.exports = mongoose.model('Budget', budgetSchema);

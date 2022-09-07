@@ -16,14 +16,21 @@ import './App.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [budget, setBudget] = useState([]);
+  const [budgets, setBudgets] = useState([]);
   
   useEffect(()=> {
     async function getAllBudget() {
       const allBudget = await budgetAPI.getAll()
-      console.log(allBudget)
+      setBudgets(allBudget)
     }
-  })
+    getAllBudget();
+  }, [])
+ 
+  async function addBudget(budgetData) {
+    console.log(budgetData)
+    const myBudget = await budgetAPI.addOne(budgetData)
+    setBudgets([...budgets, myBudget]);
+  };
 
   return (
     <main className="App">
@@ -33,10 +40,10 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path="/" element={<MyBudgets />} />
+            <Route path="/mybudgets" element={<MyBudgets budgets={budgets}/>} />
             <Route path='/budget' element={<BudgetPage />} />
-            <Route path='/budget/new' element={<AddBudget />} />
-            {/* <Route path='/orders' element={<OrderHistoryPage />} /> */}
+            <Route path='/budget/new' element={<AddBudget addBudget={addBudget} />} />
+            <Route path='/expense/new' element={<AddExpense />} />
           </Routes>
         </>
         :

@@ -11,11 +11,9 @@ export default function NavBar({ user, setUser }) {
   return (
     <main className="nav">
       <nav>
-        <Link to='/'>My Budgets</Link>
+        <Link to='/mybudgets'>My Budgets</Link>
         &nbsp; | &nbsp;
         <Link to='/budget'>Budget</Link>
-        &nbsp; | &nbsp;
-        <Link to='/addbudget'>Add Budget</Link>
         &nbsp; | &nbsp;
         Welcome, {user.name}
         &nbsp; | &nbsp;
