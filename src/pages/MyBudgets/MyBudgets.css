@@ -1,0 +1,41 @@
+.container {
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   border-style: double;
+   border-radius: 10px;
+ }
+ 
+ body {
+   background: url('https://www.behance.net/gallery/104128975/IT-Business-Finance/modules/598420227');
+   height: 100vh;
+   width: 100vw;
+   background-size: cover;
+   background-position: center;
+ }
+ 
+ .item-card {
+   background-color: #778899;
+   border-style: solid;
+   margin: 1vw;
+   border-radius: 5px;
+   border-width: 0.5px;
+   border-color: white;
+   text-align: center;
+   height: 30vh;
+   width: 30vw;
+ }
+ 
+ .item-card:hover {
+   transform: scale(1.10);
+ }
+ 
+ .name {
+   margin: 1vw;
+   background-color: white;
+   border-radius: 4px;
+ }
+ 
+ /* .movie-link {
+   text-decoration: none;
+   color: black;
+ } */
