@@ -5,7 +5,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import AddBudget from '../AddBudget/AddBudget';
 import AddExpense from '../AddExpense/AddExpense';
 import ViewExpenses from '../ViewExpenses/ViewExpenses';
-import BudgetPage from '../BudgetPage/BudgetPage';
+import MyExpenses from '../MyExpenses/MyExpenses';
 import MyBudgets from '../MyBudgets/MyBudgets';
 import BudgetDetailPage from '../BudgetDetailPage/BudgetDetailPage';
 import NavBar from '../../components/NavBar/NavBar';
@@ -62,9 +62,13 @@ export default function App() {
               path="/mybudgets/:budgetName"
               element={<BudgetDetailPage budgets={budgets} />}
             />
-            <Route path='/budget' element={<BudgetPage />} />
+            <Route path='/myexpenses' element={<MyExpenses expenses={expenses}/>} />
             <Route path='/budget/new' element={<AddBudget addBudget={addBudget} />} />
             <Route path='/expense/new' element={<AddExpense addExpense={addExpense} />} />
+            <Route
+              path="/mybudgets/:/expenseName"
+              element={<BudgetDetailPage expenses={expenses} />}
+            />
           </Routes>
         </>
         :

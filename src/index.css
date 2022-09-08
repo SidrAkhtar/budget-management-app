@@ -79,6 +79,7 @@ code {
 .nav, a {
   color: white;
   font-size: 3vmin;
+  text-decoration: none;
 }
 
 .align-ctr {

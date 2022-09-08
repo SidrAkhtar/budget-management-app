@@ -40,7 +40,7 @@ export default function AddExpense({ addExpense }) {
           value={newExpense.amount}
           onChange={handleChange}
         />
-      <label>Budget Category</label>
+      <label>Expense Category</label>
         <select 
           name="category" 
           id="category"

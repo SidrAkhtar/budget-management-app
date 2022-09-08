@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
       <nav>
         <Link to='/mybudgets'>My Budgets</Link>
         &nbsp; | &nbsp;
-        <Link to='/budget'>Budget</Link>
+        <Link to='/myexpenses'>My Expenses</Link>
         &nbsp; | &nbsp;
         Welcome, {user.name}
         &nbsp; | &nbsp;
