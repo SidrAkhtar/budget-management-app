@@ -14,11 +14,11 @@ async function index(req, res) {
 }
 
 async function create(req, res) {
-   let expense = await Expense.create({})
-   res.json(expense)
+   let expenseCreate = await Expense.create(req.body)
+   res.json(expenseCreate)
 }
 
 async function show(req, res) {
-   let expense = await Expense.findById(req.params.id);
-   res.json(expense);
+   let expenseShow = await Expense.findById(req.params.id);
+   res.json(expenseShow);
  }

@@ -42,6 +42,11 @@ h3 {
   font-size: 3vmin;
 }
 
+h4 {
+  color: white;
+  font-size: 2vmin;
+}
+
 p {
   color: var(--text-light)
 }

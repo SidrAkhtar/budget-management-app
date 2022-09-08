@@ -28,7 +28,7 @@ const budgetSchema = new Schema({
     required: true,
   },
   maximum: {
-    type: Number,
+    type: String,
     default: 0,
   },
   expenses: [expenseSchema]

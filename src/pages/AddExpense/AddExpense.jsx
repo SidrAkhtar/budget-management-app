@@ -1,9 +1,35 @@
-export default function AddExpense() {
+import { useState } from 'react';
+
+export default function AddExpense({ addExpense }) {
+  const [newExpense, setNewExpense] = useState({
+    name: "",
+    amount: "",
+    category: "Bills",
+    notes: ""
+  });
+  console.log(newExpense)
+
+  const handleChange = (evt) => {
+    console.log(evt.target.value)
+    setNewExpense({...newExpense, [evt.target.name]: evt.target.value});
+  };
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    addExpense(newExpense);
+    setNewExpense({ name: "", maximum: "", category: "Bills" });
+  };
+
   return (
     <>
-      <form action="">
+      <form onSubmit={handleSubmit}>
       <label>Name</label>
-        <input type="text" name="name"/>
+        <input 
+          type="text" 
+          name="name"
+          value={newExpense.name}
+          onChange={handleChange}
+        />
       <label>Amount</label>
         {/* <input type="number" min="1" step="any" /> */}
         <input 
@@ -11,9 +37,16 @@ export default function AddExpense() {
           name="amount"
           data-type="currency"
           placeholder="$0.00"
+          value={newExpense.amount}
+          onChange={handleChange}
         />
       <label>Budget Category</label>
-        <select name="category" id="category">
+        <select 
+          name="category" 
+          id="category"
+          value={newExpense.category}
+          onChange={handleChange}
+        >
           <option value="">Groceries</option>
           <option value="">Food</option>
           <option value="">Entertainment</option>
@@ -22,10 +55,16 @@ export default function AddExpense() {
           <option value="">Uncategorized</option>
         </select>
       <label>Notes</label>
-        <input type="text-area" name="notes"/>
-      <button type="submit">Add Expense</button>
+        <input 
+        type="text-area" 
+        name="notes"
+        value={newExpense.notes}
+        onChange={handleChange}
+        />
+      <button type="submit">
+        Add Expense
+      </button>
     </form>
-    
     </>
   );
 }
