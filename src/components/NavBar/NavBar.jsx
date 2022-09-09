@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
   return (
     <main className="nav">
       <nav>
-        <Link to='/mybudgets'>My Budgets</Link>
+        <Link to='/budget'>My Budgets</Link>
         &nbsp; | &nbsp;
         <Link to='/myexpenses'>My Expenses</Link>
         &nbsp; | &nbsp;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function BudgeteCard({ budget }) {
   return (
     <>
-      <Link to={`/mybudgets/${budget.name}`}>
+      <Link to={`/budget/${budget._id}`}>
          <div className="item-card">
             <div className="names">
                <h1>{budget.name}</h1>

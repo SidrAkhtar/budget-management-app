@@ -14,7 +14,8 @@ const expenseSchema = new Schema({
   },
   category: {
     type: String,
-    enum: ['Groceries', 'Food', 'Entertainment', 'Bills', 'Misc.', 'Uncategorized']
+    enum: ['Groceries', 'Food', 'Entertainment', 'Bills', 'Misc.', 'Uncategorized'],
+    default: "Groceries"
   },
   notes: {
     type: String,

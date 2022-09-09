@@ -1,18 +1,27 @@
 import { useParams } from "react-router-dom";
-import { MyExpenses } from  '../MyExpenses/MyExpenses';
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
+import AddExpenseForm from "../AddExpenseForm/AddExpenseForm";
+import ExpenseCard from "../../components/ExpenseCard/ExpenseCard";
+import * as expenseAPI from "../../utilities/expense-api";
 
-export default function BudgetDetailPage({ budgets, expenses }) {
-  const { budgetName } = useParams();
-  const budget = budgets.find((b) => b.name === budgetName);
+export default function BudgetDetailPage({ budgets, addExpense, setBudgets }) {
+  const [showForm, setShowForm] = useState(false);
+  const { budgetId } = useParams();
+  const budget = budgets.find((b) => b._id === budgetId);
+
+  async function addExpense(expenseData, budgetId) {
+    console.log(expenseData)
+    const myExpenses = await expenseAPI.addOne(expenseData, budgetId)
+    console.log(myExpenses)
+    const updatedBudget = budgets.map(b => b._id !== myExpenses._id ? b : myExpenses)
+    setBudgets(updatedBudget);
+    setShowForm(false);
+  };
 
   return (
     <>
-      <button>
-        <Link to='/budget/new'>Add Budget</Link>
-      </button>
-      <button>
-        <Link to='/expense/new'>Add Expense</Link>
+      <button onClick={() => setShowForm(!showForm)}>
+        Add Expense
       </button>
   
       <div className="grid">
@@ -22,8 +31,9 @@ export default function BudgetDetailPage({ budgets, expenses }) {
           <h3>{budget.maximum}</h3>
         </div>
       </div>
-
-    
+    {showForm && <AddExpenseForm addExpense={addExpense} budget={budget} setShowForm={setShowForm}/>}
+    {budget.expenses.map((e, idx) => <ExpenseCard expense={e} />) }
+    {/* {!showForm && budget.expenses.map((e, idx) => <ExpenseCard expense={e} />) } */}
 
     </>
   );

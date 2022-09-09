@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-export default function AddExpenseForm({ addExpense }) {
+export default function AddExpenseForm({ addExpense, budget, setShowForm }) {
   const [newExpense, setNewExpense] = useState({
     name: "",
     amount: "",
-    category: "",
+    category: "Groceries",
     notes: ""
   });
   console.log(newExpense)
@@ -16,8 +16,9 @@ export default function AddExpenseForm({ addExpense }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    addExpense(newExpense);
+    addExpense(newExpense, budget._id);
     setNewExpense({ name: "", maximum: "", category: "" });
+
   };
 
   return (
@@ -49,12 +50,12 @@ export default function AddExpenseForm({ addExpense }) {
           // value={newExpense.category}
           onChange={handleChange}
         >
-          <option value="">Groceries</option>
-          <option value="">Food</option>
-          <option value="">Entertainment</option>
-          <option value="">Bills</option>
-          <option value="">Misc.</option>
-          <option value="">Uncategorized</option>
+          <option value="Groceries">Groceries</option>
+          <option value="Food">Food</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Bills">Bills</option>
+          <option value="Misc.">Misc.</option>
+          <option value="Uncategorized">Uncategorized</option>
         </select>
       <label>Notes</label>
         <input 
@@ -63,9 +64,14 @@ export default function AddExpenseForm({ addExpense }) {
         value={newExpense.notes}
         onChange={handleChange}
         />
-      <button type="submit">
-        Add Expense
-      </button>
+      <div className="Buttons">
+        <button type="submit">
+          Add Expense
+        </button>
+        <button onClick={() => setShowForm(false)}>
+          Cancel
+        </button>
+      </div>
     </form>
     </>
   );

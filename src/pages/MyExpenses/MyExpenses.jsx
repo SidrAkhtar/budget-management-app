@@ -8,9 +8,9 @@ export default function MyExpenses({ expenses }) {
             <Link to='/expense/new'>Add Expense</Link>
          </button>
          <h1>Total     $1,240/$2,500</h1>
-         <div>
+         <div className="container">
             {expenses.map((e) => {
-            return <ExpenseCard key={e.id} expense={e} />;
+            return <ExpenseCard key={e.name} expense={e} />;
             })}
          </div>
       </>

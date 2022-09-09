@@ -1,21 +1,20 @@
-const Expense = require('../../models/budget');
+const Budget = require('../../models/budget');
 const express = require('express');
 const router = express.Router();
 
 module.exports = {
-   index,
    create,
    show,
 }
 
-async function index(req, res) {
-   let expense = await Expense.find({})
-   res.json(expense)
-}
-
 async function create(req, res) {
-   let expenseCreate = await Expense.create(req.body)
-   res.json(expenseCreate)
+   console.log(req.param.id)
+   let budget = await Budget.findOne({_id: req.body.budgetId})
+   req.body.expenseData.user = req.user._id
+   budget.expenses.push(req.body.expenseData)
+   await budget.save();
+   console.log(budget)
+   res.json(budget)
 }
 
 async function show(req, res) {
