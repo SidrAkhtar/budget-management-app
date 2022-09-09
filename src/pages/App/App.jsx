@@ -20,6 +20,8 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [budgets, setBudgets] = useState([]);
   const [expenses, setExpenses] = useState([]);
+  const [updateBudget, setUpdateBudget] = useState([]);
+
   
   useEffect(()=> {
     async function getAllBudget() {
@@ -49,6 +51,21 @@ export default function App() {
     setExpenses([...expenses, myExpense]);
   };
 
+
+  async function handleDelete(id) {
+    budgetAPI.deleteBudget(id);
+    const newBudgets = budgets.filter(b => b._id !== id)
+    setBudgets(newBudgets);
+  }
+ 
+  async function handleEdit(id) {
+    budgetAPI.editAddBudgetForm(id);
+    // debugger
+    const budgetToEdit = budgets.filter(b => b._id === id)
+    setBudgets(budgetToEdit)
+    //setBudgets(newBudgets);
+  }
+ 
   return (
     <main className="App">
       <h1>Budget App</h1>

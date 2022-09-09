@@ -10,7 +10,7 @@ export default function MyExpenses({ expenses }) {
          <h1>Total     $1,240/$2,500</h1>
          <div>
             {expenses.map((e) => {
-            return <ExpenseCard key={e.name} expense={e} />;
+            return <ExpenseCard key={e.id} expense={e} />;
             })}
          </div>
       </>

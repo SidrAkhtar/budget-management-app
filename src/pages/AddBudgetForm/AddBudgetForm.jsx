@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function AddBudgetForm({ addBudget }) {
+export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
   const [newBudget, setNewBudget] = useState({
     name: "",
     maximum: "",
@@ -29,7 +29,6 @@ export default function AddBudgetForm({ addBudget }) {
           required
         />
       <label>Maximum Spending</label>
-        {/* <input  /> */}
         <input 
           // type="text"
           type="number" min="1" step="any"
@@ -40,10 +39,7 @@ export default function AddBudgetForm({ addBudget }) {
           onChange={handleChange}
           required
         /> 
-      <button type="submit">
-        Add Budget
-      </button>
+      <button type="submit">{addBudget ? "updateBudget" : "Add Budget"}</button>
     </form>
-
   );
 }

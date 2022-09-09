@@ -6,6 +6,7 @@ module.exports = {
    index,
    create,
    show,
+   edit,
    update,
    delete: deletebudget
 }
@@ -25,9 +26,14 @@ async function show(req, res) {
    res.json(budgetShow);
  }
 
+ async function edit(req, res) {
+   const budgetEdit = await Budget.findOne({_id: req.params.id, user: req.user.id});
+   res.json({EditedBudget: budgetEdit});
+}
+
  async function update(req, res) {
-   const budgetUpdate = await Budget.findOneAndDelete({_id: req.params.id, user: req.user.id});
-   res.json({deletedBudget: budgetDelete});
+   const budgetUpdate = await Budget.findOneAndUpdate({_id: req.params.id, user: req.user.id});
+   res.json({updatedBudget: budgetUpdate});
 }
 
 async function deletebudget (req, res) {

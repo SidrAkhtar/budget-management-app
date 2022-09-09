@@ -16,7 +16,6 @@ return(
         return <BudgetCard key={b._id} budget={b} />;
       })}
     </div>
-
   </>
 );
 }
