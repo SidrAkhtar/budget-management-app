@@ -9,7 +9,8 @@ const expenseSchema = new Schema({
   amount: { 
     type: Number, 
     required: true, 
-    default: 0 
+    default: 0,
+    min: 0,
   },
   category: {
     type: String,
@@ -28,8 +29,9 @@ const budgetSchema = new Schema({
     required: true,
   },
   maximum: {
-    type: String,
+    type: Number,
     default: 0,
+    min: 0,
   },
   expenses: [expenseSchema]
 }, {

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
-import AddBudget from '../AddBudget/AddBudget';
-import AddExpense from '../AddExpense/AddExpense';
+import AddBudgetForm from '../AddBudgetForm/AddBudgetForm';
+import AddExpenseForm from '../AddExpenseForm/AddExpenseForm';
 import ViewExpenses from '../ViewExpenses/ViewExpenses';
 import MyExpenses from '../MyExpenses/MyExpenses';
 import MyBudgets from '../MyBudgets/MyBudgets';
@@ -63,8 +63,8 @@ export default function App() {
               element={<BudgetDetailPage budgets={budgets} />}
             />
             <Route path='/myexpenses' element={<MyExpenses expenses={expenses}/>} />
-            <Route path='/budget/new' element={<AddBudget addBudget={addBudget} />} />
-            <Route path='/expense/new' element={<AddExpense addExpense={addExpense} />} />
+            <Route path='/budget/new' element={<AddBudgetForm addBudget={addBudget} />} />
+            <Route path='/expense/new' element={<AddExpenseForm addExpense={addExpense} />} />
             <Route
               path="/mybudgets/:/expenseName"
               element={<BudgetDetailPage expenses={expenses} />}

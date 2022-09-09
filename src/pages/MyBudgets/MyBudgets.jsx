@@ -13,9 +13,10 @@ return(
   </button>
    <div className="container">
       {budgets.map((b) => {
-        return <BudgetCard key={b.name} budget={b} />;
+        return <BudgetCard key={b._id} budget={b} />;
       })}
     </div>
+
   </>
 );
 }

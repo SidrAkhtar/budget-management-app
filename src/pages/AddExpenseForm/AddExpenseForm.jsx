@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-export default function AddExpense({ addExpense }) {
+export default function AddExpenseForm({ addExpense }) {
   const [newExpense, setNewExpense] = useState({
     name: "",
     amount: "",
-    category: "Bills",
+    category: "",
     notes: ""
   });
   console.log(newExpense)
@@ -17,7 +17,7 @@ export default function AddExpense({ addExpense }) {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     addExpense(newExpense);
-    setNewExpense({ name: "", maximum: "", category: "Bills" });
+    setNewExpense({ name: "", maximum: "", category: "" });
   };
 
   return (
@@ -29,6 +29,7 @@ export default function AddExpense({ addExpense }) {
           name="name"
           value={newExpense.name}
           onChange={handleChange}
+          required
         />
       <label>Amount</label>
         {/* <input type="number" min="1" step="any" /> */}
@@ -39,12 +40,13 @@ export default function AddExpense({ addExpense }) {
           placeholder="$0.00"
           value={newExpense.amount}
           onChange={handleChange}
+          required
         />
       <label>Expense Category</label>
         <select 
           name="category" 
-          id="category"
-          value={newExpense.category}
+          id=""
+          // value={newExpense.category}
           onChange={handleChange}
         >
           <option value="">Groceries</option>
