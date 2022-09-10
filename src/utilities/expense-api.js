@@ -14,3 +14,7 @@ export function getAll() {
 
   return sendRequest(`${BASE_URL}`, 'POST', expense);
 }
+
+export function deleteExpense(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}

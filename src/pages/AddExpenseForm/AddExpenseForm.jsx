@@ -68,7 +68,7 @@ export default function AddExpenseForm({ addExpense, budget, setShowForm }) {
         <button type="submit">
           Add Expense
         </button>
-        <button onClick={() => setShowForm(false)}>
+        <button onClick={() => setShowForm}>
           Cancel
         </button>
       </div>

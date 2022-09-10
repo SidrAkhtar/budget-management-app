@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import {useNavigate} from "react-router-dom";
 
 export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
   const [newBudget, setNewBudget] = useState({
     name: "",
     maximum: "",
   });
-  console.log(newBudget)
+
+  const navigate = useNavigate();
+
 
   const handleChange = (evt) => {
     console.log(evt.target.value)
@@ -16,6 +19,7 @@ export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
     evt.preventDefault();
     addBudget(newBudget);
     setNewBudget({ name: "", maximum: "" });
+    navigate('/budget')
   };
 
   return (

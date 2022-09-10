@@ -19,7 +19,7 @@ export default function ExpenseDetailPage({ expenses }) {
       <div className="grid">
         <div>
           <h1>{expense.name}</h1>
-          <h3>{expense.amount}</h3> */}
+          <h3>{expense.amount}</h3> 
         </div>
       </div>
 

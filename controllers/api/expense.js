@@ -5,6 +5,7 @@ const router = express.Router();
 module.exports = {
    create,
    show,
+   delete: deleteExpense,
 }
 
 async function create(req, res) {
@@ -21,3 +22,12 @@ async function show(req, res) {
    let expenseShow = await Expense.findById(req.params.id);
    res.json(expenseShow);
  }
+
+ async function deleteExpense(req, res, next) {
+   try {
+       const deletedExpense = await Expense.findOneAndDelete({'_id': req.params.id, 'user': req.user._id});
+       res.json(deletedExpense);
+   } catch (err) {
+       return next(err);
+   }
+}
