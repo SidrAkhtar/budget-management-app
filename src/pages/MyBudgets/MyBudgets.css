@@ -1,12 +1,18 @@
+/* .MyBudgets-container {
+  background: url('https://i.imgur.com/ghud73y.gif');
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+} */
+
 .container {
-   display: grid;
-   grid-template-columns: repeat(2,1fr);
-   border-style: double;
-   border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  opacity: 80%;
  }
  
  body {
-   background: url('https://www.behance.net/gallery/104128975/IT-Business-Finance/modules/598420227');
    height: 100vh;
    width: 100vw;
    background-size: cover;
@@ -29,13 +35,9 @@
    transform: scale(1.10);
  }
  
- .name {
+ /* .name {
    margin: 1vw;
    background-color: white;
    border-radius: 4px;
  }
- 
- /* .movie-link {
-   text-decoration: none;
-   color: black;
- } */
+  */

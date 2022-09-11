@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import {useNavigate} from "react-router-dom";
+import NumberFormat from 'react-number-format';
+
 
 export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
   const [newBudget, setNewBudget] = useState({
@@ -9,10 +11,9 @@ export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
 
   const navigate = useNavigate();
 
-
   const handleChange = (evt) => {
-    console.log(evt.target.value)
-    setNewBudget({...newBudget, [evt.target.name]: evt.target.value});
+    setNewBudget({...newBudget, [evt.target.name]:
+      evt.target.type === 'number' ? parseInt(evt.target.value) : evt.target.value});
   };
 
   const handleSubmit = (evt) => {
@@ -28,6 +29,7 @@ export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
         <input 
           type="text" 
           name="name"
+          placeholder="Enter Budget Name"
           value={newBudget.name}
           onChange={handleChange}
           required
@@ -38,12 +40,12 @@ export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
           type="number" min="1" step="any"
           name="maximum"
           data-type="currency"
-          placeholder="$0.00"
+          placeholder="Enter Amount"
           value={newBudget.maximum}
           onChange={handleChange}
           required
         /> 
-      <button type="submit">{addBudget ? "updateBudget" : "Add Budget"}</button>
+      <button type="submit">Add Budget</button>
     </form>
   );
 }

@@ -5,6 +5,8 @@ const router = express.Router();
 module.exports = {
    create,
    show,
+   edit,
+   update,
    delete: deleteExpense,
 }
 
@@ -21,6 +23,16 @@ async function create(req, res) {
 async function show(req, res) {
    let expenseShow = await Expense.findById(req.params.id);
    res.json(expenseShow);
+ }
+
+ async function edit(req, res) {
+    const expenseEdit = await Expense.findOne({_id: req.params.id, user: req.user.id});
+    res.json({EditedExpense: expenseEdit});
+ }
+ 
+  async function update(req, res) {
+    const expenseUpdate = await Expense.findOneAndUpdate({_id: req.params.id, user: req.user.id});
+    res.json({updatedExpense: expenseUpdate});
  }
 
  async function deleteExpense(req, res, next) {

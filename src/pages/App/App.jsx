@@ -9,7 +9,7 @@ import MyExpenses from '../MyExpenses/MyExpenses';
 import MyBudgets from '../MyBudgets/MyBudgets';
 import BudgetDetailPage from '../BudgetDetailPage/BudgetDetailPage';
 import ExpenseDetailPage from '../ExpenseDetailPage/ExpenseDetailPage';
-import ExpenseItem from '../ExpenseItem/ExpenseItem';
+// import ExpenseItem from '../ExpenseItem/ExpenseItem';
 import NavBar from '../../components/NavBar/NavBar';
 // import BudgetCard from '../../components/BudgetCard/BudgetCard';
 // import TotalBudgetCard from '../../components/TotalBudgetCard/TotalBudgetCard';
@@ -41,11 +41,6 @@ export default function App() {
     setBudgets([...budgets, myBudget]);
   };
 
-  async function handleDelete(id) {
-    budgetAPI.deleteBudget(id);
-    const newBudgets = budgets.filter(b => b._id !== id)
-    setBudgets(newBudgets);
-  }
  
   async function handleEdit(id) {
     budgetAPI.editAddBudgetForm(id);
@@ -54,10 +49,16 @@ export default function App() {
     setBudgets(budgetToEdit)
     //setBudgets(newBudgets);
   }
+
+  // async function handleDeleteBudget(id) {
+  //   const myBudget = await expenseAPI.deleteBudget(id);
+  //   const updatedBudgets = budgets.filter((b) => b._id !== myBudget._id)
+  //   setBudgets(updatedBudgets);
+  // }
  
   return (
     <main className="App">
-      <h1>Budget App</h1>
+      {/* <h1>Budget App</h1> */}
       { user ?
         <>
           <NavBar user={user} setUser={setUser} />
@@ -67,7 +68,7 @@ export default function App() {
             <Route path="/budget" element={<MyBudgets budgets={budgets}/>} />
             <Route
               path="/budget/:budgetId"
-              element={<BudgetDetailPage budgets={budgets} setBudgets={setBudgets} />}
+              element={<BudgetDetailPage budgets={budgets} setBudgets={setBudgets}/>}
             />
             <Route path='/myexpenses' element={<MyExpenses expenses={expenses}/>} />
             <Route

@@ -1,11 +1,11 @@
-/* body {
+@import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&display=swap');
+
+body {
   margin: 10;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
+  font-family: 'Elsie Swash Caps', cursive;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
 
 html { 
   background: url(https://i.imgur.com/lMvYjvV.png) no-repeat center center fixed; 
@@ -16,8 +16,7 @@ html {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Elsie Swash Caps', cursive;
 }
 
 /* CSS Custom Properties */
@@ -51,32 +50,49 @@ p {
   color: var(--text-light)
 }
 
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: border-box;
-}
+} */
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
   /* background-color: var(--tan-4); */
   padding: 2vmin;
   height: 100vh;
 }
-
+/* 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+code {
+  font-family: 'Elsie Swash Caps', cursive;
 }
 
 #root {
   height: 100%;
 }
 
-.nav, a {
+.nav {
+  background-color: grey;
+  height: 5vh;
+  padding-left:40vmin;
+  padding-right:40vmin;
+  margin: -16px;
+  padding-top: .5vmin;
+  color: white;
+  font-size: 3vmin;
+  /* text-decoration: none; */
+}
+
+
+a {
   color: white;
   font-size: 3vmin;
   text-decoration: none;
@@ -94,25 +110,25 @@ code {
   font-size: smaller;
 }
 
-.flex-ctr-ctr {
+/* .flex-ctr-ctr {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.flex-col {
+/* .flex-col {
   flex-direction: column;
-}
+} */
 
-.flex-j-end {
+/* .flex-j-end {
   justify-content: flex-end;
-}
+} */
 
 .scroll-y {
   overflow-y: scroll;
 }
 
-.section-heading {
+/* .section-heading {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -123,14 +139,14 @@ code {
   padding: .6vmin;
   text-align: center;
   font-size: 2vmin;
-}
+} */
 
-.form-container {
+/* .form-container {
   padding: 3vmin;
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
-}
+} */
 
 p.error-message {
   color: var(--orange);
@@ -142,6 +158,7 @@ form {
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
   color: var(--text-light);
+
 }
 
 label {
@@ -156,13 +173,13 @@ input {
   border: .1vmin solid var(--tan-3);
   border-radius: .5vmin;
   color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
+  background-image: none !important;
   outline: none;
 }
 
-input:focus {
+/* input:focus {
   border-color: var(--orange);
-}
+} */
 
 button, a.button {
   margin: 1vmin;
@@ -177,24 +194,25 @@ button, a.button {
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
+  align-content: space-around;
 }
 
-button.btn-sm {
+/* button.btn-sm {
   font-size: 1.5vmin;
   padding: .6vmin .8vmin;
-}
+} */
 
-button.btn-xs {
+/* button.btn-xs {
   font-size: 1vmin;
   padding: .4vmin .5vmin;
-}
+} */
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
 }
 
 button[type="submit"] {
-  grid-column: span 2;
+  /* grid-column: span 2; */
   margin: 1vmin 0 0;
+  justify-content: center;
 }

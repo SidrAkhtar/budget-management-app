@@ -6,7 +6,9 @@ const expenseCtrl = require('../../controllers/api/expense');
 // POST /api/users
 router.get('/:id', expenseCtrl.show);
 router.post('/', expenseCtrl.create);
-router.delete('/:id', expenseCtrl.delete);
+router.get('/budget/:id/edit', expenseCtrl.edit);
+router.put('/budget/:id', expenseCtrl.update);
+router.delete('/budget/:id', expenseCtrl.delete);
 // POST /api/users/login
 // router.post('/login', usersCtrl.login);
 

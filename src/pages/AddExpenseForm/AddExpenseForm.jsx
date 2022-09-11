@@ -17,8 +17,7 @@ export default function AddExpenseForm({ addExpense, budget, setShowForm }) {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     addExpense(newExpense, budget._id);
-    setNewExpense({ name: "", maximum: "", category: "" });
-
+    setNewExpense({ name: "", maximum: "", category: "", notes:"" });
   };
 
   return (
@@ -28,6 +27,7 @@ export default function AddExpenseForm({ addExpense, budget, setShowForm }) {
         <input 
           type="text" 
           name="name"
+          placeholder="Enter Expense Description"
           value={newExpense.name}
           onChange={handleChange}
           required
@@ -35,10 +35,10 @@ export default function AddExpenseForm({ addExpense, budget, setShowForm }) {
       <label>Amount</label>
         {/* <input type="number" min="1" step="any" /> */}
         <input 
-          type="text"
+          type="number"
           name="amount"
           data-type="currency"
-          placeholder="$0.00"
+          placeholder="Enter Amount"
           value={newExpense.amount}
           onChange={handleChange}
           required
@@ -61,18 +61,20 @@ export default function AddExpenseForm({ addExpense, budget, setShowForm }) {
         <input 
         type="text-area" 
         name="notes"
+        placeholder="Enter Notes"
         value={newExpense.notes}
         onChange={handleChange}
         />
-      <div className="Buttons">
+      <div>
         <button type="submit">
           Add Expense
         </button>
-        <button onClick={() => setShowForm}>
+        <button onClick={() => setShowForm(false)}>
           Cancel
         </button>
       </div>
     </form>
+    
     </>
   );
 }

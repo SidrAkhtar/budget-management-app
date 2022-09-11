@@ -5,9 +5,9 @@ export default function BudgeteCard({ budget }) {
     <>
       <Link to={`/budget/${budget._id}`}>
          <div className="item-card">
-            <div className="names">
-               <h1>{budget.name}</h1>
-               <h3>Maximum Spending: {budget.maximum}</h3>
+            <div>
+               <h1>Budget Name:{budget.name}</h1>
+               <h3>Maximum Spending: ${budget.maximum}</h3>
             </div>
          </div>
       </Link>
