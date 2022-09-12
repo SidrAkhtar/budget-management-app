@@ -8,7 +8,7 @@ module.exports = {
    show,
    edit,
    update,
-   delete: deleteBudget
+   delete: deleteBudget,
 }
 
 async function index(req, res) {
@@ -22,8 +22,9 @@ async function create(req, res) {
 }
 
 async function show(req, res) {
-   const budgetShow = await Budget.findById(req.params.id);
-   res.json(budgetShow);
+   // const budgetShow = await Budget.findById(req.params.id);
+   // res.json(budgetShow);
+   console.log(req.params.id)
  }
 
  async function edit(req, res) {

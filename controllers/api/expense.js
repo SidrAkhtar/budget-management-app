@@ -9,10 +9,11 @@ module.exports = {
 }
 
 async function create(req, res) {
-   console.log(req.param.id)
+   console.log(req.body)
    let budget = await Budget.findOne({_id: req.body.budgetId})
    req.body.expenseData.user = req.user._id
    budget.expenses.push(req.body.expenseData)
+   // await budget.updateBudget(req.params.id)
    await budget.save();
    console.log(budget)
    res.json(budget)

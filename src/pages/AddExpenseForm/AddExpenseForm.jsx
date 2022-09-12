@@ -7,10 +7,8 @@ export default function AddExpenseForm({ expense, addExpense, budget, setShowFor
     category: "Groceries",
     notes: ""
   });
-  console.log(budget)
 
   const handleChange = (evt) => {
-    console.log(evt.target.value)
     setNewExpense({...newExpense, [evt.target.name]: evt.target.value});
   };
 

@@ -3,7 +3,6 @@ import { useState } from 'react';
 import AddExpenseForm from "../../pages/AddExpenseForm/AddExpenseForm";
 
 export default function ExpenseCard({ expense, handleDeleteExpense, updateExpense, budget, editExpense, setEditExpense }) {
-  console.log(editExpense)
   return (
     <div>
       {editExpense === expense._id ? <AddExpenseForm expense={expense} budget={budget} editExpense={editExpense} setEditExpense={setEditExpense} updateExpense={updateExpense}/> 
@@ -13,6 +12,7 @@ export default function ExpenseCard({ expense, handleDeleteExpense, updateExpens
         <p>Amount: {expense.amount}</p>
         <p>Expense Category: {expense.category}</p>
         <p>Notes: {expense.notes}</p>
+        <p>Remaining Budget: ${budget.maximum - expense.amount}</p>
         <button onClick={() => handleDeleteExpense(expense._id)}>Delete Expense</button>
         <button onClick={() => setEditExpense(expense._id)}>Edit Expense</button>
       </div>

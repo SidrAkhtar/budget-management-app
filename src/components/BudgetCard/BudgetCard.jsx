@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function BudgeteCard({ budget }) {
+export default function BudgeteCard({ budget, expense }) {
   return (
     <>
       <Link to={`/budget/${budget._id}`}>

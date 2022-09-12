@@ -22,4 +22,7 @@ export function deleteBudget(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
+export function getCurrBudget(id) {
+  return sendRequest(`${BASE_URL}/${id}`)
+}
 

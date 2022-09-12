@@ -24,7 +24,6 @@ export default function App() {
   const [expenses, setExpenses] = useState([]);
   const [updateBudget, setUpdateBudget] = useState([]);
 
-
   useEffect(()=> {
     async function getAllBudget() {
       const allBudget = await budgetAPI.getAll()
