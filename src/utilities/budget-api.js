@@ -14,7 +14,7 @@ export function addOne(budgetData) {
   return sendRequest(`${BASE_URL}`, 'POST', budgetData);
 }
 
-export function editAddBudgetForm(id) {
+export function editBudget(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT');
 }
 

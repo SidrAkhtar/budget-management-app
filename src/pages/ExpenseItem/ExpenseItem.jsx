@@ -1,12 +1,18 @@
-export default function ExpenseItem({ e, handleDelete }) {
+export default function ExpenseItem({ e, expenseItem, handleDeleteExpense }) {
+    const [updateExpense, setUpdateExpense] = useState(false);
     
     return (
-        <div className="page-list-item">
-            <div>{e.name}</div> 
-            <div>{e.amount}</div> 
-            <div>{e.category}</div>
-            <div>{e.notes}</div>
-            <button onClick={() => handleDelete(e._id)}>X</button>
-            <br/><br/>
-        </div>
-    )};
+        <>
+            {updateExpense ? <AddExpenseForm expenseItem={expenseItem} updateExpense={updateExpense} setUpdateExpense={setUpdateExpense} /> 
+            :
+            <div className="page-list-item">
+                <div>{expenseItem.name}</div> 
+                <div>{expenseItem.amount}</div> 
+                <div>{expenseItem.category}</div>
+                <div>{expenseItem.notes}</div>
+                <button onClick={() => handleDeleteExpense(expenseData)}>Delete Expense</button>
+                <br/><br/>
+            </div>
+            }
+        </>
+)};

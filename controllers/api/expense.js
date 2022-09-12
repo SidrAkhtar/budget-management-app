@@ -4,8 +4,6 @@ const router = express.Router();
 
 module.exports = {
    create,
-   show,
-   edit,
    update,
    delete: deleteExpense,
 }
@@ -19,27 +17,26 @@ async function create(req, res) {
    console.log(budget)
    res.json(budget)
 }
-
-async function show(req, res) {
-   let expenseShow = await Expense.findById(req.params.id);
-   res.json(expenseShow);
- }
-
- async function edit(req, res) {
-    const expenseEdit = await Expense.findOne({_id: req.params.id, user: req.user.id});
-    res.json({EditedExpense: expenseEdit});
- }
  
   async function update(req, res) {
-    const expenseUpdate = await Expense.findOneAndUpdate({_id: req.params.id, user: req.user.id});
-    res.json({updatedExpense: expenseUpdate});
+   const budget = await Budget.findOne({'expenses._id' : req.params.id, user: req.user.id});
+   let expenseSubDoc = budget.expenses.id(req.body.id)
+   expenseSubDoc.name = req.body.expense.name
+   expenseSubDoc.amount = req.body.expense.amount
+   expenseSubDoc.category = req.body.expense.category
+   expenseSubDoc.notes = req.body.expense.notes
+   await budget.save()
+   res.json(budget)
  }
 
  async function deleteExpense(req, res, next) {
    try {
-       const deletedExpense = await Expense.findOneAndDelete({'_id': req.params.id, 'user': req.user._id});
-       res.json(deletedExpense);
+       const budget = await Budget.findOne({'expenses._id': req.params.id, 'user': req.user._id});
+       budget.expenses.remove(req.params.id)
+       await budget.save()
+       res.json(budget);
    } catch (err) {
        return next(err);
    }
 }
+

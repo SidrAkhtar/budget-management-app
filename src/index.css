@@ -82,13 +82,12 @@ code {
 .nav {
   background-color: grey;
   height: 5vh;
-  padding-left:40vmin;
-  padding-right:40vmin;
-  margin: -16px;
-  padding-top: .5vmin;
+  /* padding-left:0vmin;
+  padding-right:0vmin; */
+  margin: 0;
+  padding-top: 0;
   color: white;
   font-size: 3vmin;
-  /* text-decoration: none; */
 }
 
 
@@ -96,6 +95,8 @@ a {
   color: white;
   font-size: 3vmin;
   text-decoration: none;
+  padding: 1vmin;
+  justify-content: center;
 }
 
 .align-ctr {

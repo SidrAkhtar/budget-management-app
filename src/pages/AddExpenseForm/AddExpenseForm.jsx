@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-export default function AddExpenseForm({ addExpense, budget, setShowForm }) {
-  const [newExpense, setNewExpense] = useState({
+export default function AddExpenseForm({ expense, addExpense, budget, setShowForm, editExpense, setEditExpense, updateExpense }) {
+  const [newExpense, setNewExpense] = useState(expense ? expense : {
     name: "",
     amount: "",
     category: "Groceries",
     notes: ""
   });
-  console.log(newExpense)
+  console.log(budget)
 
   const handleChange = (evt) => {
     console.log(evt.target.value)
@@ -16,7 +16,7 @@ export default function AddExpenseForm({ addExpense, budget, setShowForm }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    addExpense(newExpense, budget._id);
+    editExpense ? updateExpense(newExpense, expense._id) : addExpense(newExpense, budget._id);
     setNewExpense({ name: "", maximum: "", category: "", notes:"" });
   };
 
@@ -67,14 +67,13 @@ export default function AddExpenseForm({ addExpense, budget, setShowForm }) {
         />
       <div>
         <button type="submit">
-          Add Expense
-        </button>
-        <button onClick={() => setShowForm(false)}>
-          Cancel
+          {editExpense ? "Update" : "Add"} Expense
         </button>
       </div>
     </form>
-    
-    </>
+    <button onClick={() => editExpense ? setEditExpense(false) : setShowForm(false)}>
+    Cancel
+    </button>
+  </>
   );
 }
