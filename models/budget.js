@@ -20,10 +20,6 @@ const expenseSchema = new Schema({
   notes: {
     type: String,
   },
-  date: {
-    type: String,
-    required: true
-  }
 }, {
   timestamps: true
 });

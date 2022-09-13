@@ -22,8 +22,8 @@ export default function BudgetDetailPage({ budgets, setBudgets }) {
   }, [budget])
   
   const navigate = useNavigate();
-
   if (!budgets.length) return null;
+
 
   async function addExpense(expenseData, budgetId) {
     const myExpenses = await expenseAPI.addOne(expenseData, budgetId)
@@ -59,11 +59,17 @@ export default function BudgetDetailPage({ budgets, setBudgets }) {
     setBudgets(budgetToEdit)
   }
 
+  // async function handleDeleteBudget(budgetId) {
+  //   const myBudget = await budgetAPI.deleteBudget(budgetId);
+  //   const updatedBudget = budgets.filter((b) => b._id !== myBudget._id)
+  //   setBudgets(updatedBudget);
+  //   navigate('/budget')
+  // }
   async function handleDeleteBudget(budgetId) {
-    const myBudget = await budgetAPI.deleteBudget(budgetId);
-    const updatedBudgets = budgets.filter((b) => b._id !== myBudget._id)
-    setBudgets(updatedBudgets);
-    navigate('/budget')
+    await budgetAPI.deleteBudget(budgetId);
+    const remainingBudgets = budgets.filter((b) => b._id !== budgetId);
+    setBudgets(remainingBudgets);
+    navigate('/budget');
   }
 
   return (
