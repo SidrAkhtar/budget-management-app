@@ -17,8 +17,8 @@ async function index(req, res) {
 }
 
 async function create(req, res) {
-   const budgetCreate = await Budget.create(req.body)
    req.body.user = req.user._id;
+   const budgetCreate = await Budget.create(req.body)
    res.json(budgetCreate)
 }
 
@@ -29,8 +29,8 @@ async function show(req, res) {
  }
 
 async function edit(req, res) {
-   const budgetEdit = await Budget.findOne({_id: req.params.id, user: req.user.id});
    req.body.user = req.user._id;
+   const budgetEdit = await Budget.findOne({_id: req.params.id, user: req.user.id});
    res.json({EditedBudget: budgetEdit});
 }
 

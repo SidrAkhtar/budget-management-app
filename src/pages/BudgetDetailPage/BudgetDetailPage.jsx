@@ -6,7 +6,7 @@ import * as expenseAPI from "../../utilities/expense-api";
 import * as budgetAPI from "../../utilities/budget-api";
 import {useNavigate} from "react-router-dom";
 
-export default function BudgetDetailPage({ budgets, setBudgets }) {
+export default function BudgetDetailPage({ budgets, setBudgets, user }) {
   const { budgetId } = useParams();
   const budget = budgets.find((b) => b._id === budgetId);
   let addExpenses = budget && budget.expenses.map((expense) => expense)
@@ -82,8 +82,8 @@ export default function BudgetDetailPage({ budgets, setBudgets }) {
         </div>
       </div>
       <div>
-        <button onClick={() => handleDeleteBudget(budget._id)}>Delete Budget</button>
-        <button onClick={() => handleEditBudget(budget._id)}>Edit Budget</button>
+        {user._id === budget.user ? <button onClick={() => handleDeleteBudget(budget._id)}>Delete Budget</button> : ""}
+        {/* <button onClick={() => handleEditBudget(budget._id)}>Edit Budget</button> */}
       </div>
       <hr />
       <button onClick={() => setShowForm(!showForm)}>

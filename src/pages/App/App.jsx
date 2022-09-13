@@ -40,18 +40,12 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/' element={<ProfilePage />} />
             <Route path='/budget/new' element={<AddBudgetForm addBudget={addBudget} />} />
-            <Route path="/budget" element={<MyBudgets budgets={budgets}/>} />
+            <Route path="/budget" element={<MyBudgets budgets={budgets} user={user} />} />
             <Route
               path="/budget/:budgetId"
-              element={<BudgetDetailPage budgets={budgets} setBudgets={setBudgets}/>}
+              element={<BudgetDetailPage budgets={budgets} setBudgets={setBudgets} user={user}/>}
             />
-            {/* <Route path='/myexpenses' element={<MyExpenses expenses={expenses}/>} /> */}
-            {/* <Route
-              path="/myexpenses/:expenseName"
-              element={<ExpenseDetailPage expenses={expenses} />}
-            /> */}
           </Routes>
         </>
         :

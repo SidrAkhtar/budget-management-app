@@ -34,6 +34,10 @@ const budgetSchema = new Schema({
     default: 0,
     min: 0,
   },
+  userId: {
+    type: String,
+  },
+  user: {type: Schema.Types.ObjectId, ref: 'User'},
   expenses: [expenseSchema]
 }, {
   timestamps: true,

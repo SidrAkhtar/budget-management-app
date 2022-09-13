@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 import AddExpenseForm from "../../pages/AddExpenseForm/AddExpenseForm";
 
-export default function ExpenseCard({ expense, handleDeleteExpense, updateExpense, budget, editExpense, setEditExpense }) {
+export default function ExpenseCard({ expense, handleDeleteExpense, updateExpense, budget, editExpense, setEditExpense, user }) {
   return (
     <div>
       {editExpense === expense._id ? <AddExpenseForm expense={expense} budget={budget} editExpense={editExpense} setEditExpense={setEditExpense} updateExpense={updateExpense}/> 

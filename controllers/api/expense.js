@@ -9,8 +9,8 @@ module.exports = {
 }
 
 async function create(req, res) {
+   req.body.user = req.user._id;
    let budget = await Budget.findOne({_id: req.body.budgetId, user: req.user._id})
-   // req.body.expenseData.user = req.user._id
    budget.expenses.push(req.body.expenseData)
    // await budget.updateBudget(req.params.id)
    await budget.save();
@@ -19,6 +19,7 @@ async function create(req, res) {
 }
  
   async function update(req, res) {
+   // req.body.user = req.user._id;
    const budget = await Budget.findOne({'expenses._id' : req.params.id, user: req.user._id});
    let expenseSubDoc = budget.expenses.id(req.body.id)
    expenseSubDoc.name = req.body.expense.name
