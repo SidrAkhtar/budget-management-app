@@ -9,9 +9,12 @@ export default function MyBudgets({ budgets }) {
 return(
   <>
     <button>
-      <Link to='/budget/new' className="add-budget-button">Add Budget</Link>
+      <Link to='/budget/new'>Add Budget</Link>
     </button>
-    <div className="MyBudgets-container">
+  <br />
+  <br />
+  <br />
+    <div className="MyBudgets-page">
       {budgets.map((b) => {
         return <BudgetCard key={b._id} budget={b} />;
       })}

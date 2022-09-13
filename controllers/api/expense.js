@@ -9,8 +9,7 @@ module.exports = {
 }
 
 async function create(req, res) {
-   console.log(req.body)
-   let budget = await Budget.findOne({_id: req.body.budgetId})
+   let budget = await Budget.findOne({_id: req.body.budgetId, user: req.user._id})
    req.body.expenseData.user = req.user._id
    budget.expenses.push(req.body.expenseData)
    // await budget.updateBudget(req.params.id)
@@ -20,7 +19,7 @@ async function create(req, res) {
 }
  
   async function update(req, res) {
-   const budget = await Budget.findOne({'expenses._id' : req.params.id, user: req.user.id});
+   const budget = await Budget.findOne({'expenses._id' : req.params.id, user: req.user._id});
    let expenseSubDoc = budget.expenses.id(req.body.id)
    expenseSubDoc.name = req.body.expense.name
    expenseSubDoc.amount = req.body.expense.amount
@@ -32,7 +31,7 @@ async function create(req, res) {
 
  async function deleteExpense(req, res, next) {
    try {
-       const budget = await Budget.findOne({'expenses._id': req.params.id, 'user': req.user._id});
+       const budget = await Budget.findOne({'expenses._id': req.params.id, user: req.user._id});
        budget.expenses.remove(req.params.id)
        await budget.save()
        res.json(budget);

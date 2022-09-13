@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&display=swap');
 
-body {
+/* body {
   margin: 10;
   font-family: 'Elsie Swash Caps', cursive;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-}
+} */
 
 html { 
   background: url(https://i.imgur.com/lMvYjvV.png) no-repeat center center fixed; 
@@ -21,9 +21,9 @@ code {
 
 /* CSS Custom Properties */
 :root {
-  --white: #FFFFFF;
+  /* --white: #FFFFFF; */
   /* --tan-1: #FBF9F6; */
-  --tan-2: #E7E2DD;
+  /* --tan-2: #E7E2DD; */
   /* --tan-3: #E2D9D1; */
   /* --tan-4: #D3C1AE; */
   /* --orange: #F67F00; */
@@ -36,18 +36,55 @@ h1 {
   font-size: 5vmin;
 }
 
-h3 {
+h3, th {
   color: magenta;
   font-size: 3vmin;
 }
 
-h4 {
+h4, td {
   color: white;
   font-size: 2vmin;
 }
 
 p {
   color: var(--text-light)
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(255, 12, 12, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: red;
+  color: #ffffff;
+  text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 2vmin 8vmin;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #ee0a0a;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f60909;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
 }
 
 /* *, *:before, *:after {
@@ -88,18 +125,13 @@ code {
   padding-top: 0;
   color: white;
   font-size: 3vmin;
-}
-
-
-a {
-  color: white;
-  font-size: 3vmin;
   text-decoration: none;
-  padding: 1vmin;
-  justify-content: center;
 }
 
-.align-ctr {
+
+
+
+/* .align-ctr {
   text-align: center;
 }
 
@@ -109,7 +141,7 @@ a {
 
 .smaller {
   font-size: smaller;
-}
+} */
 
 /* .flex-ctr-ctr {
   display: flex;
@@ -181,8 +213,9 @@ input {
 /* input:focus {
   border-color: var(--orange);
 } */
-
+/* 
 button, a.button {
+  align-items: center;
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
@@ -196,7 +229,7 @@ button, a.button {
   outline: none;
   cursor: pointer;
   align-content: space-around;
-}
+} */
 
 /* button.btn-sm {
   font-size: 1.5vmin;
@@ -213,7 +246,57 @@ button:disabled, form:invalid button[type="submit"] {
 }
 
 button[type="submit"] {
-  /* grid-column: span 2; */
+  grid-column: span 2;
   margin: 1vmin 0 0;
   justify-content: center;
+}
+
+/* ALL BUTTONS!!!! */
+/* body {
+  display: flex;
+  height:100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+} */
+
+button {
+  margin-left: 20vmin;
+  text-decoration: none;
+  color: #6a3edb;
+  border: 6px solid #ffabe9;
+  border-radius:15px;
+  padding: 1vmin 1Vmin;
+  font-size: 15px;
+  font-family: tahoma;
+  letter-spacing:3px;
+  cursor: pointer;
+  font-weight: bold;
+  filter: drop-shadow(0 0 15px #2d1125) drop-shadow(0 0 50px #e7afd8) contrast(2) brightness(1);
+  transition: .5s;
+  align-items: center;
+}
+
+
+
+button:hover, a.button:hover {
+  color: white;
+  background-color: rgb(210, 1, 182);
+  filter: drop-shadow(0 0 20px #fc48cc) contrast(2) brightness(2);
+}
+
+
+/* a.button {
+  color: black;
+  font-size: 3vmin;
+  text-decoration: none;
+  display: flex;
+} */
+
+
+button {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  /* margin-left: 8em; */
 }

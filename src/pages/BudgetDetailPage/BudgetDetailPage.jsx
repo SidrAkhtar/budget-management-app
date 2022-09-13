@@ -4,6 +4,7 @@ import AddExpenseForm from "../AddExpenseForm/AddExpenseForm";
 import ExpenseCard from "../../components/ExpenseCard/ExpenseCard";
 import * as expenseAPI from "../../utilities/expense-api";
 import * as budgetAPI from "../../utilities/budget-api";
+import {useNavigate} from "react-router-dom";
 
 export default function BudgetDetailPage({ budgets, setBudgets }) {
   const { budgetId } = useParams();
@@ -20,7 +21,7 @@ export default function BudgetDetailPage({ budgets, setBudgets }) {
     console.log(budget)
   }, [budget])
   
-  console.log(maximumBudget)
+  const navigate = useNavigate();
 
   if (!budgets.length) return null;
 
@@ -62,18 +63,19 @@ export default function BudgetDetailPage({ budgets, setBudgets }) {
     const myBudget = await budgetAPI.deleteBudget(budgetId);
     const updatedBudgets = budgets.filter((b) => b._id !== myBudget._id)
     setBudgets(updatedBudgets);
+    navigate('/budget')
   }
 
   return (
     <>
-      <div className="budget-detail">
-        <h1>Budget Name: {budget && budget.name}</h1>
-        {console.log(budget.expenses, "hello")}
-        <h3>Maximum Spending: ${budget && budget.maximum}</h3>
-        <h3>Remaining Budget: ${budget.maximum}</h3>
-        {/* Calculate expense-budget */}
-
-  
+      <div className="budget-detail-card">
+        <div className="b-item-card-2">
+          <h1>Budget Name: {budget && budget.name}</h1>
+          <h3>Maximum Spending: ${budget && budget.maximum}</h3>
+        {/* <h3>Remaining Budget: ${budget.maximum}</h3> */}
+        </div>
+      </div>
+      <div>
         <button onClick={() => handleDeleteBudget(budget._id)}>Delete Budget</button>
         <button onClick={() => handleEditBudget(budget._id)}>Edit Budget</button>
       </div>
@@ -84,7 +86,9 @@ export default function BudgetDetailPage({ budgets, setBudgets }) {
      
     {showForm && <AddExpenseForm addExpense={addExpense} budget={budget} setShowForm={setShowForm} handleDeleteBudget={handleDeleteBudget}/>}
     <h3>Expense History</h3>
+    <div className="Expense-Details">
     {budget && budget.expenses.map((e, idx) => <ExpenseCard key={idx} expense={e} budget={budget} handleDeleteExpense={handleDeleteExpense} updateExpense={updateExpense} editExpense={editExpense} setEditExpense={setEditExpense} /> ) }
+    </div>
     {/* <button onClick={() => handleDeleteExpense(expenseItem._id)}>Delete Expense</button> */}
 
     {/* {!showForm && budget.expenses.map((e, idx) => <ExpenseCard expense={e} />) } */}

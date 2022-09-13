@@ -13,13 +13,13 @@
   opacity: 80%;
  } */
  
- body {
+/* body {
    height: 100vh;
    width: 100vw;
    background-size: cover;
    background-position: center;
- }
- 
+ }  */
+
  /* .item-card {
    background-color: #BC8F8F;
    border-style: solid;
@@ -32,12 +32,17 @@
    width: 30vw;
  } */
  
+ .MyBudgets-page {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  place-items: center;
+ }
 
- .budget-page-container{
+ .budget-page-container {
   display: grid;
   place-items: center;
   position: relative;
-  width: 30vmin;
+  width: 35vmin;
   height: 39vmin;
   border-radius: 1em;
   background: linear-gradient(50deg, #2a5a3b, #1e4886);
@@ -47,11 +52,11 @@
 
  .item-card {
   display: grid;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 32vh;
-  width: 23vmin;
+  height: 35vh;
+  width: 30vmin;
   padding: 1em;
   text-align: center;
   background-color: #171614;
@@ -90,6 +95,13 @@
 
 }
 
+/* a.add-budget-button {
+  display: flex;
+  margin-top: 2em;
+  align-items: center;
+} */
+
+
  /* .item-card:hover {
    transform: scale(1.10);
  } */
@@ -101,9 +113,3 @@
    border-radius: 4px;
  }
   */
-
-/* .add-budget-button {
-  display: flex;
-  justify-content: center;
-
-} */

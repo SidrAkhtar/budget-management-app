@@ -9,7 +9,7 @@ router.get('/:id', budgetCtrl.show);
 router.post('/', budgetCtrl.create);
 router.get('/budget/:id/edit', budgetCtrl.edit);
 router.put('/budget/:id', budgetCtrl.update);
-router.delete('/budget/:id', budgetCtrl.delete);
+router.delete('/:id', budgetCtrl.delete);
 // POST /api/users/login
 // router.post('/login', usersCtrl.login);
 
