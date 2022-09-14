@@ -5,6 +5,7 @@ import ExpenseCard from "../../components/ExpenseCard/ExpenseCard";
 import * as expenseAPI from "../../utilities/expense-api";
 import * as budgetAPI from "../../utilities/budget-api";
 import {useNavigate} from "react-router-dom";
+import "./BudgetDetailPage.css";
 
 export default function BudgetDetailPage({ budgets, setBudgets, user }) {
   const { budgetId } = useParams();

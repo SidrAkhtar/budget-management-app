@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import {useNavigate} from "react-router-dom";
-import NumberFormat from 'react-number-format';
-
 
 export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
   const [newBudget, setNewBudget] = useState({
@@ -24,7 +22,7 @@ export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form classname="add-budget-form" onSubmit={handleSubmit}>
       <label>Name</label>
         <input 
           type="text" 

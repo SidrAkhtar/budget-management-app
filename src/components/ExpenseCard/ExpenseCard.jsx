@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import AddExpenseForm from "../../pages/AddExpenseForm/AddExpenseForm";
+import "./ExpenseCard.css";
 
 export default function ExpenseCard({ expense, handleDeleteExpense, updateExpense, budget, editExpense, setEditExpense, user }) {
   return (

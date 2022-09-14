@@ -3,14 +3,15 @@
 body {
   margin: 10;
   font-family: 'Elsie Swash Caps', cursive;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  margin: auto;
 }
 
 
 html { 
-  background: url(https://i.imgur.com/lMvYjvV.png) no-repeat center center fixed; 
+  background: url(https://i.imgur.com/2CBqs3D.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -25,37 +26,19 @@ html {
   -o-background-size: cover;
   background-size: cover;
   height: 100vh;
-  opacity: 90%
+  opacity: 90%;
+  align-items: center;
+  justify-content: center;
 }
 
 code {
   font-family: 'Elsie Swash Caps', cursive;
 }
 
-/* CSS Custom Properties */
-/* :root {
-  --text-light: white;
-  --text-dark: black;
-} */
-
-.img {
-  border-radius: 2em;
-  align-items: center;
-  max-width: 100%;
-  height: 200%;
-}
-
 h1 {
   color: white;
   font-size: 4vmin;
   text-align: center;
-}
-
-.Title {
-  color: white;
-  font-size: 10vmin;
-  text-align: center;
-  text-shadow: 2px 2px magenta;
 }
 
 h2 {
@@ -68,13 +51,6 @@ h3 {
   text-align: center;
   color: magenta;
   font-size: 5vmin;
-}
-
-.Sub-Title {
-  color: magenta;
-  font-size: 5vmin;
-  text-align: center;
-  text-shadow: 2px 2px white;
 }
 
 th {
@@ -158,11 +134,6 @@ code {
 }
 
 .nav {
-
-  /* padding-left:0vmin;
-  padding-right:0vmin; */
-  /* margin: 0; */
-  /* padding-top: 0; */
   color: white;
   text-decoration: none;
   grid-row: 1 / 2;
@@ -226,78 +197,95 @@ code {
 
 
 /* FORM */
-/* 
-body {
-  background: linear-gradient(45deg, #FC466B, #3F5EFB);
-  height: 100vh;
-  font-family: 'Montserrat', sans-serif;
-} */
 
-/* .container {
-  position: absolute;
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-} */
-
-.form-container {
-  padding: 3vmin;
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+*, :after, :before {
+  box-sizing: border-box;
 }
-
-/* 
-form {
-  background: $white;
-  padding: 3em;
-  height: 320px;
-  border-radius: 20px;
-  border-left: 1px solid $white;
-  border-top: 1px solid $white;
-  backdrop-filter: blur(10px);
-  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
-  text-align: center;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-} */
-
-
-
-
-
 
 p.error-message {
   color: var(--orange);
   text-align: center;
 }
 
+.form-container {
+  padding: 3vmin;
+}
+
+div {
+  display: block;
+}
+
+.App {
+  text-align: center;
+}
+
 form {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-gap: 1.25vmin;
+  /* grid-template-columns: 1fr 3fr; */
+  grid-template-columns: 20rem auto;
+  width: 30vmin;
   gap: 1.25vmin;
   color: white;
+  align-items: center;
+}
 
+div > form {
+  display: grid;
+  grid-gap: 1.25vmin;
+  /* grid-template-columns: 1fr 3fr; */
+  grid-template-columns: 20rem auto;
+  width: 30vmin;
+  gap: 1.25vmin;
+  color: white;
+  align-content: center;
+  margin-left: 1vmin;
+}
+
+form > button[type="submit"] {
+  margin-left: 45vmin;
 }
 
 label {
-  font-size: 2vmin;
-  display: flex;
+  font-size: 3vmin;
+  display: grid;
+  grid-template-columns: auto;
   align-items: center;
 }
 
 input {
-  padding: 1vmin;
-  font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
-  border-radius: .5vmin;
-  color: var(--text-dark);
+  /* border: .1vmin solid var(--tan-3); */
+  border-radius: 3vmin;
+  /* border-color: pink; */
+  color: black;
   background-image: none !important;
   outline: none;
+  width: 40vmin;
+  align-items: center;
+  margin-top: 2vmin;
 }
 
-/* input:focus {
-  border-color: var(--orange);
-} */
+input, select {
+  padding: 1vmin;
+  outline:none;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  border-radius: 20vmin;
+  -webkit-border-radius:20vmin;
+  -moz-border-radius:3px;
+  border: 5px solid magenta;
+  font-size: 3.5vmin;
+  width: 50vmin;
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 255, 1);
+  -webkit-box-shadow: 0 0 5vmin rgba(0, 0, 255, 1); 
+  -moz-box-shadow: 0 0 5vmin rgba(0, 0, 255, 1);
+  border: solid rgba(0,0,255, 0.8); 
+}
+
 /* 
 button, a.button {
   align-items: center;
@@ -329,13 +317,11 @@ button, a.button {
 
 
 /* ~***~ ALL BUTTONS!!!! ~***~ */
-
-/* body {
+/* 
+body {
   display: flex;
-  height:100vh;
   align-items: center;
   justify-content: center;
-  background-color: black;
 } */
 
 a {
@@ -343,43 +329,36 @@ a {
   color: white;
 }
 
-a.button {
+/* a.button {
   display: grid;
   color: black;
   font-size: 3vmin;
   text-decoration: none;
   display: flex;
 
-}
+} */
 
-button {
-  /* justify-content: center;
-  text-decoration: none;
-  font-size: 1.5vmin;
-  padding: .6vmin .8vmin; */
-  /* margin-left: 8em; */
-}
 
-button {
+
+
+button, .sign-up-button {
   margin-left: 20vmin;
   margin-left: 90vmin;
   text-decoration: none;
-  color: var(--text-dark);
+  color: black;
   border: 6px solid #ffabe9;
   border-radius:15px;
   padding: 1vmin 1Vmin;
   font-size: 15px;
   font-family: tahoma;
-  letter-spacing:3px;
+  letter-spacing: 3px;
   cursor: pointer;
   font-weight: bold;
   filter: drop-shadow(0 0 15px #2d1125) drop-shadow(0 0 50px #e7afd8) contrast(2) brightness(1);
   transition: .5s;
   align-items: center;
-  /* margin: 1vmin 0 0; */
-  /* grid-column: 2; */
   grid-template-columns: auto auto auto auto;
-  grid-column-start: 2;
+  /* grid-column-start: 4; */
 }
 
 button:hover, a.button:hover {
@@ -392,17 +371,39 @@ button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
 }
 
-button.Auth-page-buttons {
+.sign-up-button, button[type="submit"] {
   grid-column: span 2;
-  /* justify-content: center; */
+  margin: 1vmin 0 0;
+  /* justify-content: center;
+  align-items: center;
+  font-size: 2vmin;
+  padding: .4vmin .5vmin; */
 }
 
-button[type="submit"] {
-  /* grid-column: span 2; */
-  /* margin: 1vmin 0 0; */
-  justify-content: center;
-  align-items: center;
+button, .sign-up-button, form>button {
+  background-color: magenta;
+  width: 30vh;
+}
 
-  /* font-size: 1vmin; */
-  padding: .4vmin .5vmin;
+button, form>button, .sign-up-button {
+  font-weight: 100;
+}
+
+a.button, button, form>button, .sign-up-button {
+  border: 0.5vmin solid #e7e2dd;
+  border-radius: 5vmin;
+  cursor: pointer;
+  font-size: 2vmin;
+  font-weight: 700;
+  margin: 1vmin;
+  outline: none;
+  padding: 1vmin;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.add-budget-form {
+  margin: 20vmin;
+  padding: 200vmin;
 }

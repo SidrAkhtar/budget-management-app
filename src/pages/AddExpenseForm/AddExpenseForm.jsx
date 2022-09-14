@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "./AddExpenseForm.css";
 
 export default function AddExpenseForm({ expense, addExpense, budget, setShowForm, editExpense, setEditExpense, updateExpense }) {
   const [newExpense, setNewExpense] = useState(expense ? expense : {
