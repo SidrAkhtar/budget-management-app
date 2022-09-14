@@ -2,7 +2,7 @@
    <img src="https://i.imgur.com/mgbHMc3.png" width="200" height="180">
    <h1>Budget App</h1>
    <a href="https://www.linkedin.com/in/sidra-akhtar-sa/" target="_blank">
-   <img src="https://img.shields.io/badge/-@sidra-akhtar-sa-blue?style=flat&logo=Linkedin&logoColor=white"
+   <img src="https://img.shields.io/badge/-@username-blue?style=flat&logo=Linkedin&logoColor=white"
 />
 </a>
 
@@ -14,29 +14,28 @@
 <h1>:pencil: Description</h1>
 <p>Budget App allows users to organize their finances and create budget.</p>
 <p>Budget App allows users to manage their budgets and expense which can allow users to track how much money enters and exits your household on a regular basis.</p>
-<p>Users can create multiple budgets and enter expenses in the specific budget.</p>
-<p>If a user's goal is to have different budgets for their home, personal budget and/or car, they can definely create as many budgets as he/she wants.</p>
+<p>Users can create multiple budgets and enter expenses in the specific budget. If a user's goal is to have different budgets for their home, personal budget and/or car, they can definely create as many budgets as he/she wants.</p>
 <p>Having multiple budgets allow users to organice their finances and keep track of each buget/expense.</p>
 
 <h1>Screenshots</h1>
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p> <br> </p> | <img src="https://i.imgur.com/TyOFe0E.png" width="1400"> |
+| <p>When the app loads, users are able to login and visitors can sign up to access the web features.<br> </p> | <img src="https://i.imgur.com/TyOFe0E.png" width="1400"> |
 
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p><br> </p> | <img src="https://i.imgur.com/YfXn9QC.png" width="1400"> |
+| <p>This is Home page. User can click "Add Budget" to create a new budget.<br> </p> | <img src="https://i.imgur.com/YfXn9QC.png" width="1400"> |
 
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p><br> </p> | <img src="https://i.imgur.com/whBwBge.png" width="1400"> |
+| <p>My Budgets page: Users can view all of their budgets on this page.<br> </p> | <img src="https://i.imgur.com/whBwBge.png" width="1400"> |
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p><br> </p> | <img src="https://i.imgur.com/TupX1RU.png" width="1400"> |
+| <p>Budget Detail Page: On this page, user can delete the budget. User can also Add Expense on this page to this specific budget. Also, user is able to edit/delete the expense.<br> </p> | <img src="https://i.imgur.com/TupX1RU.png" width="1400"> |
 
 
 ## :computer: Technologies Used
