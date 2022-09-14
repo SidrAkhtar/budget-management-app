@@ -21,22 +21,37 @@ code {
 
 /* CSS Custom Properties */
 :root {
-  /* --white: #FFFFFF; */
-  /* --tan-1: #FBF9F6; */
-  /* --tan-2: #E7E2DD; */
-  /* --tan-3: #E2D9D1; */
-  /* --tan-4: #D3C1AE; */
-  /* --orange: #F67F00; */
   --text-light: white;
   --text-dark: black;
 }
 
 h1 {
   color: var(--text-light);
+  font-size: 4vmin;
+  text-align: center;
+}
+
+.Title {
+  color: var(--text-light);
+  font-size: 10vmin;
+  text-align: center;
+  text-shadow: 2px 2px magenta;
+}
+
+h3 {
+  text-align: center;
+  color: magenta;
   font-size: 5vmin;
 }
 
-h3, th {
+.Sub-Title {
+  color: magenta;
+  font-size: 5vmin;
+  text-align: center;
+  text-shadow: 2px 2px white;
+}
+
+th {
   color: magenta;
   font-size: 3vmin;
 }
