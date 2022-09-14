@@ -1,18 +1,22 @@
-.expense-card {
+div > .budget-detail-card {
+color: red;
+}
+
+/* .expense-card {
    display: grid;
    grid-template-columns: repeat(4,1fr);
    place-items: center;  
 
 }
+ */
 
-
-.Budget-detail-page {
+/* .Budget-detail-page {
    display: flex;
    grid-template-columns: repeat(4,1fr);
    place-items: center;  
   }
- 
-.budget-detail-card {
+  */
+/* .budget-detail-card {
    display: grid;
    place-items: center;
    position: relative;
@@ -21,9 +25,9 @@
    border-radius: 1em;
    background: linear-gradient(50deg, #2a5a3b, #1e4886);
    overflow: hidden;
-}
+} */
  
-.item-card-2 {
+/* .item-card-2 {
    display: grid;
    flex-direction: column;
    align-items: center;
@@ -39,9 +43,9 @@
    overflow: hidden;
    z-index: 1; 
  }
+  */
  
- 
-.budget-detail-card::before {
+/* .budget-detail-card::before {
    content: "";
    position: absolute;
    width: 450px;
@@ -51,14 +55,14 @@
    transition: 1.9s;
    background: linear-gradient(50deg, #00ff59, #02b3ff);
    transform: rotate(-45deg) translate(0, -100px);
- }
+ } */
  
- .budget-detail-card:hover::before {
+ /* .budget-detail-card:hover::before {
    animation: cardEffect 1.9s;
- }
- 
+ } */
+/*  
  @keyframes cardEffect {
    100% {
      transform: rotate(-45deg) translate(0, 450px);
    }
- }
+ } */

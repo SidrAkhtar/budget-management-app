@@ -64,11 +64,8 @@ export default function BudgetDetailPage({ budgets, setBudgets, user }) {
   return (
     <>
       <div className="budget-detail-card">
-        <div className="b-item-card-2">
-          <h1>Budget Name: {budget && budget.name}</h1>
-          <h3>Maximum Spending: ${budget && budget.maximum}</h3>
-        {/* <h3>Remaining Budget: ${budget.maximum}</h3> */}
-        </div>
+        <h1>Budget Name: {budget && budget.name}</h1>
+        <h3>Maximum Spending: ${budget && budget.maximum}</h3>
       </div>
       <div>
         {user._id === budget.user ? <button onClick={() => handleDeleteBudget(budget._id)}>Delete Budget</button> : ""}

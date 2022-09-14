@@ -34,18 +34,19 @@
  
  .MyBudgets-page {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(3,1fr);
   place-items: center;
-  gap: 1em;
+  gap: 0em;
  }
 
  .budget-page-container {
   display: grid;
   place-items: center;
   position: relative;
-  width: 35vmin;
-  height: 39vmin;
+  width: 30vmin;
+  height: 37vmin;
   border-radius: 1em;
+  margin: .5vmin;
   background: linear-gradient(50deg, #2a5a3b, #1e4886);
   overflow: hidden;
  }
@@ -55,8 +56,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 35vh;
-  width: 30vmin;
+  height: 36vh;
+  width: 29vmin;
   padding: 1em;
   text-align: center;
   background-color: #171614;
@@ -65,6 +66,10 @@
   cursor: pointer;
   overflow: hidden;
   z-index: 1; 
+}
+
+.item-card > h3 {
+  font-size: 4vmin;
 }
 
 
