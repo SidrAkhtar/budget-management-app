@@ -1,7 +1,8 @@
 <div align="center">
-   <h1><img src="https://i.imgur.com/EurjXud.png" width="120" height="80">Budget App<img src="https://i.imgur.com/EurjXud.png" width="120" height="80"></h1>
+   <img src="https://i.imgur.com/mgbHMc3.png" width="200" height="180">
+   <h1>Budget App</h1>
    <a href="https://www.linkedin.com/in/sidra-akhtar-sa/" target="_blank">
-   <img src="https://img.shields.io/badge/-@username-blue?style=flat&logo=Linkedin&logoColor=white"
+   <img src="https://img.shields.io/badge/-@sidra-akhtar-sa-blue?style=flat&logo=Linkedin&logoColor=white"
 />
 </a>
 
