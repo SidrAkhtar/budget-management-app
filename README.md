@@ -1,8 +1,10 @@
 <div align="center">
+   <h1><img src="https://i.imgur.com/WhngROJ.png" width="350" height="100"></h1>
    <h1>Budget App</h1>
    <a href="https://www.linkedin.com/in/sidra-akhtar-sa/" target="_blank">
-   <img src="https://img.shields.io/badge/-@sidra-akhtar-sa-blue?style=flat&logo=Linkedin&logoColor=white"/>
-   </a>
+   <img src="https://img.shields.io/badge/-@username-blue?style=flat&logo=Linkedin&logoColor=white"
+/>
+</a>
 
    <a href="mailto:sidrakanwal14@gmail.com" target="_blank">
       <img src="https://img.shields.io/badge/-Gmail-c14438?style=flat&logo=Gmail&logoColor=white">
@@ -57,8 +59,10 @@ Tips
 ## :fast_forward: Next Steps   
 
 ### Upcoming Features
-- [ ] User profile page
-- [ ] Dashboard to show budget/expense chart
+- [ ] Add user profile page
+- [ ] Add Dashboard to show budget/expense chart 
 - [ ] Search option for expenses
-- [ ] 
+- [ ] Allow users to comment on other users' budgets
+- [ ] On Budget page, show expense - budget total
+- [ ] Add Calendar so user can add expense on a specific date
 
