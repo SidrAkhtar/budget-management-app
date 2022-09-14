@@ -1,45 +1,11 @@
-/* .MyBudgets-container {
-  background: url('https://i.imgur.com/ghud73y.gif');
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-} */
-
-/* 
-.container {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  opacity: 80%;
- } */
- 
-/* body {
-   height: 100vh;
-   width: 100vw;
-   background-size: cover;
-   background-position: center;
- }  */
-
- /* .item-card {
-   background-color: #BC8F8F;
-   border-style: solid;
-   margin: 1vw;
-   border-radius: 5px;
-   border-width: 0.5px;
-   border-color: white;
-   text-align: center;
-   height: 30vh;
-   width: 30vw;
- } */
- 
- .MyBudgets-page {
+.MyBudgets-page {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   place-items: center;
   gap: 0em;
  }
 
- .budget-page-container {
+.budget-page-container {
   display: grid;
   place-items: center;
   position: relative;
@@ -51,7 +17,7 @@
   overflow: hidden;
  }
 
- .item-card {
+.item-card {
   display: grid;
   flex-direction: column;
   align-items: center;
@@ -71,7 +37,6 @@
 .item-card > h3 {
   font-size: 4vmin;
 }
-
 
 .budget-page-container::before {
   content: "";
@@ -98,7 +63,6 @@
 .item-card:hover {
   color: #ffff;
 }
-
 
 a.add-budget-button {
   display: flex;

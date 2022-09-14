@@ -1,11 +1,3 @@
-/* form {
-   align-items: center;
-} */
-/* 
-main {
-   align-items: center;
-} */
-
 .auth-img {
    display: flex;
    flex-direction: column;
@@ -23,6 +15,7 @@ main {
    margin: 20vh auto;
    font-family: 'Coda', cursive;
 }
+
 .Title {
    color: white;
    font-size: 9vmin;
@@ -30,7 +23,7 @@ main {
    text-shadow: 2px 2px magenta;
    padding: -6vmin;
    margin-top: -4vmin;
- }
+}
 
 .Sub-Title {
    color: magenta;
@@ -40,13 +33,6 @@ main {
    margin-top: -2vmin;
    padding: 1vmin;
 }
-
-
-/* button {
-   background-color: white;
-   width: 60vh;
-   align-items: center;
-} */
 
 .form-container {
    padding: 3vmin;

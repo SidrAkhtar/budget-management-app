@@ -12,19 +12,17 @@ module.exports = {
 }
 
 async function index(req, res) {
-   const budget = await Budget.find({})
+   const budget = await Budget.find({});
    res.json(budget)
 }
 
 async function create(req, res) {
    req.body.user = req.user._id;
-   const budgetCreate = await Budget.create(req.body)
+   const budgetCreate = await Budget.create(req.body);
    res.json(budgetCreate)
 }
 
 async function show(req, res) {
-   // const budgetShow = await Budget.findById(req.params.id);
-   // res.json(budgetShow);
    console.log(req.params.id)
  }
 

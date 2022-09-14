@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import "./AddExpenseForm.css";
 
 export default function AddExpenseForm({ expense, addExpense, budget, setShowForm, editExpense, setEditExpense, updateExpense }) {
   const [newExpense, setNewExpense] = useState(expense ? expense : {
@@ -22,54 +21,53 @@ export default function AddExpenseForm({ expense, addExpense, budget, setShowFor
   return (
     <>
       <form onSubmit={handleSubmit}>
-      <label>Name</label>
-        <input 
-          type="text" 
-          name="name"
-          placeholder="Enter Expense Description"
-          value={newExpense.name}
+        <label>Name</label>
+          <input 
+            type="text" 
+            name="name"
+            placeholder="Enter Expense Description"
+            value={newExpense.name}
+            onChange={handleChange}
+            required
+          />
+        <label>Amount</label>
+          <input 
+            type="number"
+            name="amount"
+            data-type="currency"
+            placeholder="Enter Amount"
+            value={newExpense.amount}
+            onChange={handleChange}
+            required
+          />
+        <label>Expense Category</label>
+          <select 
+            name="category" 
+            id=""
+            // value={newExpense.category}
+            onChange={handleChange}
+          >
+            <option value="Groceries">Groceries</option>
+            <option value="Food">Food</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Bills">Bills</option>
+            <option value="Misc.">Misc.</option>
+            <option value="Uncategorized">Uncategorized</option>
+          </select>
+        <label>Notes</label>
+          <input 
+          type="text-area" 
+          name="notes"
+          placeholder="Enter Notes"
+          value={newExpense.notes}
           onChange={handleChange}
-          required
-        />
-      <label>Amount</label>
-        {/* <input type="number" min="1" step="any" /> */}
-        <input 
-          type="number"
-          name="amount"
-          data-type="currency"
-          placeholder="Enter Amount"
-          value={newExpense.amount}
-          onChange={handleChange}
-          required
-        />
-      <label>Expense Category</label>
-        <select 
-          name="category" 
-          id=""
-          // value={newExpense.category}
-          onChange={handleChange}
-        >
-          <option value="Groceries">Groceries</option>
-          <option value="Food">Food</option>
-          <option value="Entertainment">Entertainment</option>
-          <option value="Bills">Bills</option>
-          <option value="Misc.">Misc.</option>
-          <option value="Uncategorized">Uncategorized</option>
-        </select>
-      <label>Notes</label>
-        <input 
-        type="text-area" 
-        name="notes"
-        placeholder="Enter Notes"
-        value={newExpense.notes}
-        onChange={handleChange}
-        />
-      <div>
-        <button type="submit">
-          {editExpense ? "Update" : "Add"} Expense
-        </button>
-      </div>
-    </form>
+          />
+        <div>
+          <button type="submit">
+            {editExpense ? "Update" : "Add"} Expense
+          </button>
+        </div>
+      </form>
     <button className="cancel-button" onClick={() => editExpense ? setEditExpense(false) : setShowForm(false)}>
     Cancel
     </button>

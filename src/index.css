@@ -10,7 +10,7 @@ body {
 }
 
 html { 
-  background: url(https://i.imgur.com/2CBqs3D.png) no-repeat center center fixed; 
+  background: url(https://i.imgur.com/OokZ1cX.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -87,7 +87,6 @@ code {
   grid-row: 1 / 2;
   font-size: 3vmin;
   grid-column: 1 / 4;
-  /* background: #3b7784; */
   background: #00468C;
   position: sticky;
   padding: 1.1em;
@@ -131,7 +130,6 @@ div {
 form {
   display: grid;
   grid-gap: 1.25vmin;
-  /* grid-template-columns: 1fr 3fr; */
   grid-template-columns: 20rem auto;
   width: 30vmin;
   gap: 1.25vmin;
@@ -142,7 +140,6 @@ form {
 div > form {
   display: grid;
   grid-gap: 1.25vmin;
-  /* grid-template-columns: 1fr 3fr; */
   grid-template-columns: 20rem auto;
   width: 30vmin;
   gap: 1.25vmin;

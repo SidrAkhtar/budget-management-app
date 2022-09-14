@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {useNavigate} from "react-router-dom";
 
-export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
+export default function AddBudgetForm({ addBudget }) {
   const [newBudget, setNewBudget] = useState({
     name: "",
     maximum: "",
@@ -34,7 +34,6 @@ export default function AddBudgetForm({ addBudget, handleEdit, handleDelete }) {
         />
       <label>Maximum Spending</label>
         <input 
-          // type="text"
           type="number" min="1" step="any"
           name="maximum"
           data-type="currency"

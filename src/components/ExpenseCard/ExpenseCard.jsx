@@ -1,9 +1,6 @@
-import { Link } from "react-router-dom";
-import { useState } from 'react';
 import AddExpenseForm from "../../pages/AddExpenseForm/AddExpenseForm";
-import "./ExpenseCard.css";
 
-export default function ExpenseCard({ expense, handleDeleteExpense, updateExpense, budget, editExpense, setEditExpense, user }) {
+export default function ExpenseCard({ expense, handleDeleteExpense, updateExpense, budget, editExpense, setEditExpense }) {
   return (
     <div>
       {editExpense === expense._id ? <AddExpenseForm expense={expense} budget={budget} editExpense={editExpense} setEditExpense={setEditExpense} updateExpense={updateExpense}/> 
@@ -30,7 +27,7 @@ export default function ExpenseCard({ expense, handleDeleteExpense, updateExpens
           </tr>
         </table>
       </div>
-}
+  }
     </div>
   );
 }

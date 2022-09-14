@@ -1,10 +1,7 @@
 .budget-detail-card {
   height: 15vmin;
   width: 100%;
-  /* background-color: #1fc8db; */
-  /* background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%); */
   border-radius: 2vmin;
-  
   color: white;
   opacity: 0.95;
 }
@@ -30,8 +27,8 @@
 
 .styled-table th,
 .styled-table td {
-    padding: 1vmin 4vmin;
-    font-size: 2.5vmin;
+  padding: 1vmin 4vmin;
+  font-size: 2.5vmin;
 }
 
 .styled-table tbody tr {
@@ -52,9 +49,9 @@
 }
 
 button > .cancel-button {
- margin-left: -2vmin;
- margin: -5vmin;
- margin-bottom: 2vmin;
+  margin-left: -2vmin;
+  margin: -5vmin;
+  margin-bottom: 2vmin;
  
 }
 
@@ -65,49 +62,3 @@ div > button[type="submit"] {
 h3 {
   font-size: 4vmin;
 }
-/* .Expense-Details {
-  width: 100%;
-  background-color: red;
-} */
-
-/* .expense-card {
-   display: grid;
-   grid-template-columns: repeat(4,1fr);
-   place-items: center;  
-
-}
- */
-
-/* .Budget-detail-page {
-   display: flex;
-   grid-template-columns: repeat(4,1fr);
-   place-items: center;  
-  } */
-
-/* .budget-detail-card {
-   display: grid;
-   place-items: center;
-   position: relative;
-   width: 40vmin;
-   height: 39vmin;
-   border-radius: 1em;
-   background: linear-gradient(50deg, #2a5a3b, #1e4886);
-   overflow: hidden;
-} */
- 
-/* .item-card-2 {
-   display: grid;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   height: 32vh;
-   width: 32vmin;
-   padding: 1em;
-   text-align: center;
-   background-color: #171614;
-   border-radius: .8em;
-   color: #858585;
-   cursor: pointer;
-   overflow: hidden;
-   z-index: 1; 
- } */

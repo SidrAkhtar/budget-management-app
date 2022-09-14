@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import AddExpenseForm from "../AddExpenseForm/AddExpenseForm";
 import ExpenseCard from "../../components/ExpenseCard/ExpenseCard";
 import * as expenseAPI from "../../utilities/expense-api";
@@ -10,16 +10,9 @@ import "./BudgetDetailPage.css";
 export default function BudgetDetailPage({ budgets, setBudgets, user }) {
   const { budgetId } = useParams();
   const budget = budgets.find((b) => b._id === budgetId);
-  let addExpenses = budget && budget.expenses.map((expense) => expense)
   const [showForm, setShowForm] = useState(false);
-  let [maximumBudget, setMaximumBudget] = useState(budget && budget.maximum);
   const [remainingBudget, setRemainingBudget] = useState(budget && budget.maximum);
   const [editExpense, setEditExpense] = useState(false);
-  
-  // useEffect(() => {
-  //   console.log(budget)
-  // }, [budget])
-  
   const navigate = useNavigate();
   if (!budgets.length) return null;
 
@@ -34,24 +27,14 @@ export default function BudgetDetailPage({ budgets, setBudgets, user }) {
   async function updateExpense(expense, id) {
     const myExpense = await expenseAPI.editExpense(expense, id);
     const expenseToEdit = budgets.map(e => e._id === myExpense._id ? myExpense : e);
-    setBudgets(expenseToEdit)
-    setEditExpense(null)
-    //setExpenses(newExpenses);
-    // navigate(`/budget/${budgetId}`)
+    setBudgets(expenseToEdit);
+    setEditExpense(null);
   }
 
   async function handleDeleteExpense(id) {
     const myExpense = await expenseAPI.deleteExpense(id);
-    // const updatedExpenses = budget.expenses.filter((e) => e._id !== myExpense._id)
-    const updatedExpense = budgets.map(b => b._id !== myExpense._id ? b : myExpense)
+    const updatedExpense = budgets.map(b => b._id !== myExpense._id ? b : myExpense);
     setBudgets(updatedExpense);
-  }
-
-  async function handleEditBudget(id) {
-    budgetAPI.editBudget(id);
-    // debugger
-    const budgetToEdit = budgets.filter(b => b._id === id)
-    setBudgets(budgetToEdit)
   }
 
   async function handleDeleteBudget(budgetId) {
@@ -69,7 +52,6 @@ export default function BudgetDetailPage({ budgets, setBudgets, user }) {
       </div>
       <div>
         {user._id === budget.user ? <button onClick={() => handleDeleteBudget(budget._id)}>Delete Budget</button> : ""}
-        {/* <button onClick={() => handleEditBudget(budget._id)}>Edit Budget</button> */}
       </div>
       <hr />
       <button onClick={() => setShowForm(!showForm)}>
@@ -81,9 +63,8 @@ export default function BudgetDetailPage({ budgets, setBudgets, user }) {
     <div className="Expense-Details">
     {budget && budget.expenses.map((e, idx) => <ExpenseCard key={idx} expense={e} budget={budget} handleDeleteExpense={handleDeleteExpense} updateExpense={updateExpense} editExpense={editExpense} setEditExpense={setEditExpense} /> ) }
     </div>
-    {/* <button onClick={() => handleDeleteExpense(expenseItem._id)}>Delete Expense</button> */}
-
-    {/* {!showForm && budget.expenses.map((e, idx) => <ExpenseCard expense={e} />) } */}
+    {/* Code for not to show expenses under Add Expense Form */}
+      {/* {!showForm && budget.expenses.map((e, idx) => <ExpenseCard expense={e} />) } */}
     </>
   );
 }

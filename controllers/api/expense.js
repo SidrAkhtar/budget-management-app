@@ -10,16 +10,13 @@ module.exports = {
 
 async function create(req, res) {
    req.body.user = req.user._id;
-   let budget = await Budget.findOne({_id: req.body.budgetId, user: req.user._id})
-   budget.expenses.push(req.body.expenseData)
-   // await budget.updateBudget(req.params.id)
+   let budget = await Budget.findOne({_id: req.body.budgetId, user: req.user._id});
+   budget.expenses.push(req.body.expenseData);
    await budget.save();
-   console.log(budget)
    res.json(budget)
 }
  
-  async function update(req, res) {
-   // req.body.user = req.user._id;
+async function update(req, res) {
    const budget = await Budget.findOne({'expenses._id' : req.params.id, user: req.user._id});
    let expenseSubDoc = budget.expenses.id(req.body.id)
    expenseSubDoc.name = req.body.expense.name
@@ -28,13 +25,13 @@ async function create(req, res) {
    expenseSubDoc.notes = req.body.expense.notes
    await budget.save()
    res.json(budget)
- }
+}
 
- async function deleteExpense(req, res, next) {
+async function deleteExpense(req, res, next) {
    try {
        const budget = await Budget.findOne({'expenses._id': req.params.id, user: req.user._id});
-       budget.expenses.remove(req.params.id)
-       await budget.save()
+       budget.expenses.remove(req.params.id);
+       await budget.save();
        res.json(budget);
    } catch (err) {
        return next(err);

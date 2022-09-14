@@ -3,12 +3,11 @@ const BASE_URL = '/api/budget';
 
 export function getAll() {
   return sendRequest(`${BASE_URL}`);
- }
+}
 
- export function create(budget) {
-  console.log(budget);
+export function create(budget) {
   return sendRequest(`${BASE_URL}/new`, 'POST', budget);
- }
+}
 
 export function addOne(budgetData) {
   return sendRequest(`${BASE_URL}`, 'POST', budgetData);
