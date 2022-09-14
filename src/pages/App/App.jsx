@@ -5,9 +5,9 @@ import AuthPage from '../AuthPage/AuthPage';
 import AddBudgetForm from '../AddBudgetForm/AddBudgetForm';
 import MyBudgets from '../MyBudgets/MyBudgets';
 import BudgetDetailPage from '../BudgetDetailPage/BudgetDetailPage';
+import Home from '../Home/Home'
 import NavBar from '../../components/NavBar/NavBar';
 import * as budgetAPI from '../../utilities/budget-api';
-import * as expenseAPI from '../../utilities/expense-api';
 import './App.css';
 
 export default function App() {
@@ -38,8 +38,9 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/budget/new' element={<AddBudgetForm addBudget={addBudget} />} />
+            <Route path="/" element={<Home/>} />
             <Route path="/budget" element={<MyBudgets budgets={budgets} user={user} />} />
+            <Route path='/budget/new' element={<AddBudgetForm addBudget={addBudget} />} />
             <Route
               path="/budget/:budgetId"
               element={<BudgetDetailPage budgets={budgets} setBudgets={setBudgets} user={user}/>}

@@ -5,7 +5,9 @@ body {
   font-family: 'Elsie Swash Caps', cursive;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    height: 100%;
 }
+
 
 html { 
   background: url(https://i.imgur.com/lMvYjvV.png) no-repeat center center fixed; 
@@ -15,27 +17,51 @@ html {
   background-size: cover;
 }
 
+
+.Home-container {
+  background: url(https://i.imgur.com/UYRqT0F.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  opacity: 90%
+}
+
 code {
   font-family: 'Elsie Swash Caps', cursive;
 }
 
 /* CSS Custom Properties */
-:root {
+/* :root {
   --text-light: white;
   --text-dark: black;
+} */
+
+.img {
+  border-radius: 2em;
+  align-items: center;
+  max-width: 100%;
+  height: 200%;
 }
 
 h1 {
-  color: var(--text-light);
+  color: white;
   font-size: 4vmin;
   text-align: center;
 }
 
 .Title {
-  color: var(--text-light);
+  color: white;
   font-size: 10vmin;
   text-align: center;
   text-shadow: 2px 2px magenta;
+}
+
+h2 {
+  text-align: center;
+  color: gold;
+  font-size: 6vmin;
 }
 
 h3 {
@@ -62,7 +88,7 @@ h4, td {
 }
 
 p {
-  color: var(--text-light)
+  color: white;
 }
 
 .styled-table {
@@ -142,9 +168,11 @@ code {
   grid-row: 1 / 2;
   font-size: 3vmin;
   grid-column: 1 / 4;
-  background: magenta;
+  background: linear-gradient(50deg, #00ff59, #02b3ff);
+  background: #3b7784;
   position: sticky;
   padding: 1.1em;
+  margin-left: -4vmin;
   width:100%;
   display: flex;
   justify-content: space-evenly;
@@ -198,12 +226,45 @@ code {
 
 
 /* FORM */
+/* 
+body {
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+} */
+
+/* .container {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+} */
+
 .form-container {
   padding: 3vmin;
-  /* background-color: var(--tan-1); */
-  /* border: .1vmin solid var(--tan-3); */
-  /* border-radius: 1vmin; */
+  border: .1vmin solid var(--tan-3);
+  border-radius: 1vmin;
 }
+
+/* 
+form {
+  background: $white;
+  padding: 3em;
+  height: 320px;
+  border-radius: 20px;
+  border-left: 1px solid $white;
+  border-top: 1px solid $white;
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+} */
+
+
+
+
+
 
 p.error-message {
   color: var(--orange);
@@ -214,7 +275,7 @@ form {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
-  color: var(--text-light);
+  color: white;
 
 }
 
@@ -279,10 +340,11 @@ button, a.button {
 
 a {
   text-decoration: none;
-  color: black
+  color: white;
 }
 
 a.button {
+  display: grid;
   color: black;
   font-size: 3vmin;
   text-decoration: none;
@@ -291,17 +353,18 @@ a.button {
 }
 
 button {
-  justify-content: center;
+  /* justify-content: center;
   text-decoration: none;
   font-size: 1.5vmin;
-  padding: .6vmin .8vmin;
+  padding: .6vmin .8vmin; */
   /* margin-left: 8em; */
 }
 
 button {
   margin-left: 20vmin;
+  margin-left: 90vmin;
   text-decoration: none;
-  color: #6a3edb;
+  color: var(--text-dark);
   border: 6px solid #ffabe9;
   border-radius:15px;
   padding: 1vmin 1Vmin;
@@ -313,6 +376,10 @@ button {
   filter: drop-shadow(0 0 15px #2d1125) drop-shadow(0 0 50px #e7afd8) contrast(2) brightness(1);
   transition: .5s;
   align-items: center;
+  /* margin: 1vmin 0 0; */
+  /* grid-column: 2; */
+  grid-template-columns: auto auto auto auto;
+  grid-column-start: 2;
 }
 
 button:hover, a.button:hover {
@@ -325,8 +392,17 @@ button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
 }
 
-button[type="submit"] {
+button.Auth-page-buttons {
   grid-column: span 2;
-  margin: 1vmin 0 0;
+  /* justify-content: center; */
+}
+
+button[type="submit"] {
+  /* grid-column: span 2; */
+  /* margin: 1vmin 0 0; */
   justify-content: center;
+  align-items: center;
+
+  /* font-size: 1vmin; */
+  padding: .4vmin .5vmin;
 }

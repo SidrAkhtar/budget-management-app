@@ -10,6 +10,8 @@ export default function NavBar({ user, setUser, MyBudgets }) {
 
   return (
       <nav className="nav">
+        <Link to='/'>Home</Link>
+        &nbsp; | &nbsp;
         <Link to='/budget'>My Budgets</Link>
         &nbsp; | &nbsp;
         Welcome, {user.name}

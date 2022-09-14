@@ -14,30 +14,24 @@ export default function BudgetDetailPage({ budgets, setBudgets, user }) {
   let [maximumBudget, setMaximumBudget] = useState(budget && budget.maximum);
   const [remainingBudget, setRemainingBudget] = useState(budget && budget.maximum);
   const [editExpense, setEditExpense] = useState(false);
-  // const [budget, setBudget] = useState(null);
-  console.log(budget && budget.maximum)
   
-  useEffect(() => {
-    console.log(budget)
-  }, [budget])
+  // useEffect(() => {
+  //   console.log(budget)
+  // }, [budget])
   
   const navigate = useNavigate();
   if (!budgets.length) return null;
 
-
   async function addExpense(expenseData, budgetId) {
     const myExpenses = await expenseAPI.addOne(expenseData, budgetId)
-    console.log(myExpenses)
     const updatedBudget = budgets.map(b => b._id !== myExpenses._id ? b : myExpenses)
     setBudgets(updatedBudget);
     setShowForm(false);
     setRemainingBudget(myExpenses.expenses[myExpenses.expenses.length-1].amount)
   };
-  console.log(remainingBudget)
 
   async function updateExpense(expense, id) {
     const myExpense = await expenseAPI.editExpense(expense, id);
-    console.log(myExpense)
     const expenseToEdit = budgets.map(e => e._id === myExpense._id ? myExpense : e);
     setBudgets(expenseToEdit)
     setEditExpense(null)
@@ -59,12 +53,6 @@ export default function BudgetDetailPage({ budgets, setBudgets, user }) {
     setBudgets(budgetToEdit)
   }
 
-  // async function handleDeleteBudget(budgetId) {
-  //   const myBudget = await budgetAPI.deleteBudget(budgetId);
-  //   const updatedBudget = budgets.filter((b) => b._id !== myBudget._id)
-  //   setBudgets(updatedBudget);
-  //   navigate('/budget')
-  // }
   async function handleDeleteBudget(budgetId) {
     await budgetAPI.deleteBudget(budgetId);
     const remainingBudgets = budgets.filter((b) => b._id !== budgetId);
