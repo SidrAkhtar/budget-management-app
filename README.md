@@ -1,5 +1,5 @@
 <div align="center">
-   <h1><img src="https://i.imgur.com/EurjXud.png" width="120" height="100">Budget App<img src="https://i.imgur.com/EurjXud.png" width="120" height="100"></h1>
+   <h1><img src="https://i.imgur.com/EurjXud.png" width="120" height="80">Budget App<img src="https://i.imgur.com/EurjXud.png" width="120" height="80"></h1>
    <a href="https://www.linkedin.com/in/sidra-akhtar-sa/" target="_blank">
    <img src="https://img.shields.io/badge/-@username-blue?style=flat&logo=Linkedin&logoColor=white"
 />
@@ -11,25 +11,31 @@
 </div>
 
 <h1>:pencil: Description</h1>
-<p></p>
-<p></p>
-<p></p>
+<p>Budget App allows users to organize their finances and create budget.</p>
+<p>Budget App allows users to manage their budgets and expense which can allow users to track how much money enters and exits your household on a regular basis.</p>
+<p>Users can create multiple budgets and enter expenses in the specific budget.</p>
+<p>If a user's goal is to have different budgets for their home, personal budget and/or car, they can definely create as many budgets as he/she wants.</p>
+<p>Having multiple budgets allow users to organice their finances and keep track of each buget/expense.</p>
 
 <h1>Screenshots</h1>
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p> <br> </p> | <img src="" width="1400"> |
+| <p> <br> </p> | <img src="https://i.imgur.com/TyOFe0E.png" width="1400"> |
 
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p><br> </p> | <img src="" width="1400"> |
+| <p><br> </p> | <img src="https://i.imgur.com/YfXn9QC.png" width="1400"> |
 
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p><br> </p> | <img src="" width="1400"> |
+| <p><br> </p> | <img src="https://i.imgur.com/whBwBge.png" width="1400"> |
+
+| Description | Screenshot |
+|------------ | ------------|
+| <p><br> </p> | <img src="https://i.imgur.com/TupX1RU.png" width="1400"> |
 
 
 ## :computer: Technologies Used
@@ -53,15 +59,15 @@ Tips
 
 [Click to open Budget App!](https://budget-management-app-sakhtar.herokuapp.com)
 
-[Click to open Trello Board(used for project planning)](https://trello.com/b/K5ij29am/budget-management)
+[Click to open Trello Board (used for project planning)](https://trello.com/b/K5ij29am/budget-management)
 
 ## :fast_forward: Next Steps   
 
 ### Upcoming Features
 - [ ] Add user profile page
-- [ ] Add Dashboard to show budget/expense chart 
-- [ ] Search option for expenses
+- [ ] Add Dashboard to show budget/expense chart
+- [ ] Add search option for expenses
 - [ ] Allow users to comment on other users' budgets
-- [ ] On Budget page, show expense - budget total
+- [ ] On Budget page, show remaining budget (expense - budget = total)
 - [ ] Add Calendar so user can add expense on a specific date
 

@@ -87,7 +87,8 @@ code {
   grid-row: 1 / 2;
   font-size: 3vmin;
   grid-column: 1 / 4;
-  background: #3b7784;
+  /* background: #3b7784; */
+  background: #00468C;
   position: sticky;
   padding: 1.1em;
   margin: 0;
