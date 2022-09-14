@@ -104,19 +104,5 @@ a.add-budget-button {
   display: flex;
   margin-top: 2em;
   align-items: center;
-  color: black
-  
+  color: black 
 }
-
-
- /* .item-card:hover {
-   transform: scale(1.10);
- } */
-
-
- /* .name {
-   margin: 1vw;
-   background-color: white;
-   border-radius: 4px;
- }
-  */

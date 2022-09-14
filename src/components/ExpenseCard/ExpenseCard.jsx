@@ -16,6 +16,8 @@ export default function ExpenseCard({ expense, handleDeleteExpense, updateExpens
             <th>Expense Category</th>
             <th>Notes</th>
             <th>Remaining Budget</th>
+            <th></th>
+            <th></th>
           </tr>
           <tr>
             <td>{expense.name}</td>
@@ -23,10 +25,10 @@ export default function ExpenseCard({ expense, handleDeleteExpense, updateExpens
             <td>{expense.category}</td>
             <td>{expense.notes}</td>
             <td>${budget.maximum - expense.amount}</td>
+            <button class="fa-solid fa-trash" onClick={() => handleDeleteExpense(expense._id)}> Delete</button>
+            <button class="fa-solid fa-pen-to-square" onClick={() => setEditExpense(expense._id)}> Edit</button>
           </tr>
         </table>
-        <button onClick={() => handleDeleteExpense(expense._id)}>Delete Expense</button>
-        <button onClick={() => setEditExpense(expense._id)}>Edit Expense</button>
       </div>
 }
     </div>

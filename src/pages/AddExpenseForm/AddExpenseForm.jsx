@@ -70,7 +70,7 @@ export default function AddExpenseForm({ expense, addExpense, budget, setShowFor
         </button>
       </div>
     </form>
-    <button onClick={() => editExpense ? setEditExpense(false) : setShowForm(false)}>
+    <button className="cancel-button" onClick={() => editExpense ? setEditExpense(false) : setShowForm(false)}>
     Cancel
     </button>
   </>

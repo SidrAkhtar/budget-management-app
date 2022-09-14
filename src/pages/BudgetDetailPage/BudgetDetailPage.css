@@ -1,6 +1,72 @@
-div > .budget-detail-card {
-color: red;
+.budget-detail-card {
+  height: 15vmin;
+  width: 100%;
+  background-color: #1fc8db;
+  background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);
+  color: white;
+  opacity: 0.95;
 }
+
+.expense-card {
+  width: auto;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 1vmin 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(255, 12, 12, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: red;
+  color: #ffffff;
+  text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 1vmin 4vmin;
+    font-size: 2.5vmin;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #ee0a0a;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f60909;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+button > .cancel-button {
+ margin-left: -2vmin;
+ margin: -5vmin;
+ margin-bottom: 2vmin;
+ 
+}
+
+div > button[type="submit"] {
+  margin-left: -2vmin;
+}
+
+h3 {
+  font-size: 4vmin;
+}
+/* .Expense-Details {
+  width: 100%;
+  background-color: red;
+} */
 
 /* .expense-card {
    display: grid;
@@ -14,8 +80,8 @@ color: red;
    display: flex;
    grid-template-columns: repeat(4,1fr);
    place-items: center;  
-  }
-  */
+  } */
+
 /* .budget-detail-card {
    display: grid;
    place-items: center;
@@ -42,27 +108,4 @@ color: red;
    cursor: pointer;
    overflow: hidden;
    z-index: 1; 
- }
-  */
- 
-/* .budget-detail-card::before {
-   content: "";
-   position: absolute;
-   width: 450px;
-   height: 35px;
-   top: 0;
-   right: 35px;
-   transition: 1.9s;
-   background: linear-gradient(50deg, #00ff59, #02b3ff);
-   transform: rotate(-45deg) translate(0, -100px);
- } */
- 
- /* .budget-detail-card:hover::before {
-   animation: cardEffect 1.9s;
- } */
-/*  
- @keyframes cardEffect {
-   100% {
-     transform: rotate(-45deg) translate(0, 450px);
-   }
  } */
