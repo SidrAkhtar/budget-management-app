@@ -21,7 +21,7 @@
 
 | Description | Screenshot |
 |------------ | ------------|
-| <p>When the app loads, users are able to login and visitors can sign up to access the web features.<br> </p> | <img src="https://i.imgur.com/TyOFe0E.png" width="1400"> |
+| <p>When the app loads, users are able to login and visitors can sign up to access the web features.<br> </p> | <img src="https://i.imgur.com/keWeO6h.png" width="1400"> |
 
 
 | Description | Screenshot |
@@ -68,6 +68,6 @@ Tips
 - [ ] Add Dashboard to show budget/expense chart
 - [ ] Add search option for expenses
 - [ ] Allow users to comment on other users' budgets
-- [ ] On Budget page, show remaining budget (expense - budget = total)
+- [ ] On Budget page, show remaining budget (budget - expense = total)
 - [ ] Add Calendar so user can add expense on a specific date
 
