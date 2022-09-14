@@ -9,7 +9,6 @@ body {
   margin: auto;
 }
 
-
 html { 
   background: url(https://i.imgur.com/2CBqs3D.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -17,7 +16,6 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
-
 
 .Home-container {
   background: url(https://i.imgur.com/UYRqT0F.png) no-repeat center center fixed; 
@@ -43,13 +41,13 @@ h1 {
 
 h2 {
   text-align: center;
-  color: gold;
+  color: #0A7E8C;
   font-size: 6vmin;
 }
 
 h3 {
   text-align: center;
-  color: magenta;
+  color: white;
   font-size: 5vmin;
 }
 
@@ -69,26 +67,11 @@ p {
   font-weight: bold;
 }
 
-/* *, *:before, *:after {
-  box-sizing: border-box;
-} */
-
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
-  /* background-color: var(--tan-4); */
   padding: 2vmin;
   height: 100vh;
 }
-/* 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 
 code {
   font-family: 'Elsie Swash Caps', cursive;
@@ -104,13 +87,10 @@ code {
   grid-row: 1 / 2;
   font-size: 3vmin;
   grid-column: 1 / 4;
-  /* background: linear-gradient(50deg, #00ff59, #02b3ff); */
   background: #3b7784;
   position: sticky;
   padding: 1.1em;
   margin: 0;
-  /* margin-left: -4vmin;
-  margin-right: 20vmin; */
   width:100%;
   display: flex;
   justify-content: space-evenly;
@@ -121,15 +101,22 @@ code {
   overflow-y: scroll;
 }
 
-/* FORM */
+.App {
+  text-align: center;
+}
+
+/* ~***~ FORM ~***~ */
 
 *, :after, :before {
   box-sizing: border-box;
 }
 
 p.error-message {
-  color: var(--orange);
+  color: red;
   text-align: center;
+  margin: 2vmin;
+  padding: 2vmin;
+  font-size: 3vmin;
 }
 
 .form-container {
@@ -138,10 +125,6 @@ p.error-message {
 
 div {
   display: block;
-}
-
-.App {
-  text-align: center;
 }
 
 form {
@@ -179,9 +162,7 @@ label {
 }
 
 input {
-  /* border: .1vmin solid var(--tan-3); */
   border-radius: 3vmin;
-  /* border-color: pink; */
   color: black;
   background-image: none !important;
   outline: none;
@@ -211,60 +192,13 @@ input:focus, select:focus {
   border: solid rgba(0,0,255, 0.8); 
 }
 
-/* 
-button, a.button {
-  align-items: center;
-  margin: 1vmin;
-  padding: 1vmin;
-  color: var(--white);
-  background-color: var(--orange);
-  font-size: 2vmin;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  border: .1vmin solid var(--tan-2);
-  border-radius: .5vmin;
-  outline: none;
-  cursor: pointer;
-  align-content: space-around;
-} */
 
-/* button.btn-sm {
-  font-size: 1.5vmin;
-  padding: .6vmin .8vmin;
-} */
-
-/* button.btn-xs {
-  font-size: 1vmin;
-  padding: .4vmin .5vmin;
-} */
-
-
-
-/* ~***~ ALL BUTTONS!!!! ~***~ */
-/* 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+/* ~***~ ALL BUTTONS & Links!!!! ~***~ */
 
 a {
   text-decoration: none;
   color: white;
 }
-
-/* a.button {
-  display: grid;
-  color: black;
-  font-size: 3vmin;
-  text-decoration: none;
-  display: flex;
-
-} */
-
-
-
 
 button, .sign-up-button {
   margin-left: 20vmin;
@@ -279,17 +213,16 @@ button, .sign-up-button {
   letter-spacing: 3px;
   cursor: pointer;
   font-weight: bold;
-  filter: drop-shadow(0 0 15px #2d1125) drop-shadow(0 0 50px #e7afd8) contrast(2) brightness(1);
+  filter: drop-shadow(0 0 15px #db3eb1) drop-shadow(0 0 50px #db3eb1) contrast(2) brightness(2);
   transition: .5s;
   align-items: center;
   grid-template-columns: auto auto auto auto;
-  /* grid-column-start: 4; */
 }
 
 button:hover, a.button:hover {
-  color: white;
-  background-color: rgb(210, 1, 182);
-  filter: drop-shadow(0 0 20px #fc48cc) contrast(2) brightness(2);
+  color: black;
+  background-color: #db3eb1;
+  filter: drop-shadow(0 0 20px #db3eb1) contrast(2) brightness(2);
 }
 
 button:disabled, form:invalid button[type="submit"] {
@@ -299,14 +232,11 @@ button:disabled, form:invalid button[type="submit"] {
 button, .sign-up-button, button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
-  /* justify-content: center;
-  align-items: center;
-  font-size: 2vmin;
-  padding: .4vmin .5vmin; */
 }
 
 button, .sign-up-button, form>button {
   background-color: magenta;
+  color: black;
   width: 30vh;
 }
 
@@ -326,7 +256,6 @@ a.button, button, form>button, .sign-up-button {
   text-align: center;
   text-decoration: none;
 }
-
 
 .add-budget-form {
   margin: 20vmin;
